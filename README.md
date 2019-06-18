@@ -1,6 +1,6 @@
-# Redux Crash Course
+# On The Way
 
-> Code from the "Redux Crash Course With React" video. Simple implementation of Redux using a couple React components.
+> App Gamification
 
 ## Quick Start
 
