@@ -23,15 +23,15 @@ class App extends Component {
 
   render() {
     let { title, entregas } = this.state;
-    // title = "Pagina Principal";
-  
+    
+    // Home
     const home = (
       <div className="d-flex flex-column align-items-center justify-content-center">
         <div className="p-2"><h5>Pedir</h5></div>
         <div onClick={this.titleViagem} className="p-2"><h5><Link to="/viagem">Criar</Link></h5></div>
       </div>
     );
-
+    // Home Gamificada
     if (entregas !== 0) {
       return (
         <div>
@@ -42,7 +42,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="container">
+        <React.Fragment>
           <Header title={title} />
           <Route exact path="/" render={props => (
             <React.Fragment>
@@ -50,7 +50,7 @@ class App extends Component {
             </React.Fragment>
           )}/>
             <Route path="/viagem" component={CriarViagem}/>    
-        </div>
+        </React.Fragment>
       </Router>
     );
   }

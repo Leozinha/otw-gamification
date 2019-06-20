@@ -4,23 +4,316 @@
   padding: 0;
 }
 
+html{
+    height: 100%;
+}
+
 body{
     font-family: 'Lato', sans-serif;
     color: #555;
-    /* letter-spacing: 0.025em; */
+    height: inherit;
 }
 
 a{
   text-decoration: none; 
 }
 
+h3{
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+h4{
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+}
+
+h5{
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+h6{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.15px;
+}
+
+.subtitle-1{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.15px;
+}
+
+.subtitle-2{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+}
+
+.body-1{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.body-2{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+}
+
+.btn-size{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+}
+
+.caption{
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4;
+}
+
 /* layout - styling */
+
+#root{
+    height: inherit;
+    background-color:#F7F7F7;
+}
 
 .background {
   background : rgba(251, 251, 251, 1);
 }
 
-.container{
+.container-fluid{
   padding-right: 0;
   padding-left: 0;
+  height: inherit;
 }
+
+.shadow{
+    box-shadow: 0 4px 12px rgba(0,0,0,0), 0 0 8px rgba(0,0,0,0.15);
+    --box-shadow-color: #1220DC;
+}
+
+/* criar viagem */
+
+textarea,
+select,
+input{
+    border: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.date-time input{
+    font-size: 1rem;
+}
+
+.date-time-input-size{
+    width: 60px;
+}
+
+.custom-select{
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    -webkit-appearance: none;
+}
+
+.custom-select, option{
+    font-size: 0.9rem;
+    color: #1220DC;
+}
+
+/* .custom-select option:checked{
+  background-color:#1220DC;
+  color: #fff;
+} */
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 rgb(180, 173, 173);
+}
+
+.custom-select:focus{
+    border:2px solid #1220DC;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border:2px solid #1220DC;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+::-webkit-input-placeholder {
+    font-size: 13px!important;
+    color: #A9AAAB;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    font-size: 13px!important;
+    color: #A9AAAB;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    font-size: 13px!important;
+    color: #A9AAAB;
+}
+
+.input-disabled::-moz-placeholder, .input-disabled::-webkit-input-placeholder, .input-disabled:-moz-placeholder{
+    color: #293FC0;
+    opacity: 1;
+}
+
+.input-value-size{
+    font-size: 0.9rem;
+    color: #A9AAAB;
+}
+
+input, select, textarea{
+    color: #1220DC;
+}
+
+textarea:focus, input:focus {
+    color: #1220DC;
+}
+
+/* button */
+
+button{
+    border: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer
+}
+
+.btn-style{
+    background: transparent;
+}
+
+.btn-style:hover{
+    color: #FCFCFC;
+}
+
+.link-no-decoration,.link-no-decoration:hover,.link-no-decoration:active,.link-no-decoration:focus{
+    outline: 0;
+    text-decoration: none;
+    color: inherit;
+    width: inherit;
+    height: inherit;
+}
+
+.primary-btn{
+    border-radius: 50px;
+    max-width: 100%;
+    height: 59px;
+    width: 200px;
+    max-height: 100%;
+    color: #FCFCFC
+}
+
+.primary-btn:active{
+    border: 2px solid #FCFCFC;
+    font-weight: bold;
+}
+
+/*
+Colors - background
+ */
+
+ .background-white-condutor{
+    border: 1px solid #1220DC;
+    height: 75%;
+}
+
+.background-white-review{
+    border: 1px solid #1220DC;
+    height: 80%;
+}
+
+.white{
+    background-color: #FCFCFC;
+}
+
+.white-height{
+    height: 380px;
+}
+
+.white-back{
+    background-color: #F7F7F7;
+}
+
+.black {
+    background-color: #000000;
+}
+
+.gray{
+    background-color: #9A9B9C;
+}
+
+.gray-2 {
+    background-color: #A9AAAB;
+}
+.gray-3 {
+    background-color: #B5B6B6;
+}
+
+.primary {
+    background-color: #1220DC;
+}
+
+.primary-2 {
+    background-color: #293FC0;
+}
+
+.primary-3 {
+    background-color: #3D48E2;
+}
+
+.primary-3{
+    background-color: #6069E7;
+}
+
+.primary-4 {
+    background-color: #7179E9;
+}
+
+.sucess{
+    background-color: #00C653;
+}
+
+.sucess-2{
+    background-color: #45D580;
+}
+
+.pendente{
+    background-color: #FF895B;
+}
+
+.pendente-2{
+    background-color: #FFA886;
+}
+
+.border-sucess{
+    border: 1px solid #00C653;
+}
+
