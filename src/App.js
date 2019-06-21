@@ -4,16 +4,19 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Header from './components/layouts/Header';
 import CriarViagem from './components/pages/CriarViagem';
-// import { Provider } from 'react-redux';
+import Footer from './components/layouts/Footer';
+// icons
+//import Trophy from './imgs/layout/trophy.png'
 
-// import store from './store';
 
 class App extends Component {
 
   state = {
     title: "",
-    entregas: 0
+    entregas: 0,
+    TrophyClick: 0
   }
+
 
   titleViagem = (e) => {
     this.setState({
@@ -22,8 +25,8 @@ class App extends Component {
   }
 
   render() {
-    let { title, entregas } = this.state;
-    
+    let { title, entregas, TrophyClick } = this.state;
+
     // Home
     const home = (
       <div className="d-flex flex-column align-items-center justify-content-center">
@@ -43,13 +46,14 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <Header title={title} />
+          <Header title={title} TrophyClick={TrophyClick} />
           <Route exact path="/" render={props => (
             <React.Fragment>
               {home}
             </React.Fragment>
           )}/>
-            <Route path="/viagem" component={CriarViagem}/>    
+            <Route path="/viagem" component={CriarViagem}/>
+            <Footer  />    
         </React.Fragment>
       </Router>
     );

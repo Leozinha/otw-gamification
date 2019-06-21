@@ -12,35 +12,42 @@ class Header extends Component {
     trophyActiveURL: TrophyActive
   }
 
-  activeIcon = (e) => {
-    const TrophyState = this.state.trophyURL;
-    const TrophyActive = this.state.trophyActiveURL;
+  activeHome = (e) => {
 
-    if (TrophyState !== Trophy) {
-      this.setState({ trophyURL: Trophy });
-    } else {
-      this.setState({ trophyURL: TrophyActive });
-    }
+    console.log("not")
+    this.setState({ trophyURL: Trophy });
+
+  }
+
+  activeTrophy = (e) => {
+    let TrophyActiveState = this.state.trophyActiveURL;
+
+
+    console.log("active")
+    this.setState({ trophyURL: TrophyActiveState });
 
   }
 
   render() {
     const Trophy = this.state.trophyURL;
+    let { title } = this.props;
 
     return (
-      <div className="navbar background d-flex align-items-center justify-content-center text-center">
-        <div className="container">
-          <div className="col">
-            <Link to="/"><img style={imgSizeLogo} src={Logo} alt="" /></Link>
+      <div className="navbar background d-flex align-items-center justify-content-center text-center white shadow">
+        <div className="container p-0">
+          <div className="col p-0">
+            <Link to="/"><img onClick={this.activeHome} className="icons-36" src={Logo} alt="" /></Link>
           </div>
-          <div className="col">
-            <h6 className="font-weight-normal">{this.props.title}</h6>
+          <div className="col-6">
+            <h6 className="font-weight-normal mb-0">{title}</h6>
           </div>
           <div className="col text-right p-0">
-            <img name="trophy" onClick={this.activeIcon} style={imgSizeTrophy} src={Trophy} alt="" />
+
+            <img className="icons-24" onClick={this.activeTrophy} src={Trophy} alt="" />
+
           </div>
-          <div className="col">
-            <img style={imgSizeUser} src={User} alt="" />
+          <div className="col pl-3 p-0">
+            <img className="icons-48" src={User} alt="" />
           </div>
         </div>
       </div>
@@ -48,23 +55,6 @@ class Header extends Component {
   }
 }
 
-const imgSizeLogo = {
-  width: '50px'
-}
-
-const imgSizeTrophy = {
-  width: '30px'
-}
-
-const imgSizeUser = {
-  width: '46px'
-}
-
-
-// const imgHeader = {
-
-// }
-
-
+//TODO propTypes
 
 export default Header;

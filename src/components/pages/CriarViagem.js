@@ -170,8 +170,6 @@ class CriarViagem extends Component {
   }
 }
 
-const newMarginLeft = {
-  marginLeft:'1.2rem'
-}
+//TODO propTypes
 
 export default CriarViagem;
