@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import LogoFooter from '../../imgs/layout/menu-logo.png'
 // import LogoFooterActive from '../../imgs/layout/menu-logo-active.png'
 import Search from '../../imgs/layout/search.png'
@@ -10,13 +11,13 @@ import Activity from '../../imgs/layout/activity.png'
 
 
 class Footer extends Component {
-
-
-
   
   render() {
+
+  
+
     return (
-      <div className="navbar background d-flex align-items-center justify-content-center text-center white shadow mt-auto">
+      <div className="navbar background align-items-center justify-content-center text-center white shadow mt-auto">
         <div className="container p-0">
           <div className="col">
             {/* <Link to="/"> */}
@@ -39,9 +40,9 @@ class Footer extends Component {
             {/* </Link> */}
           </div>
           <div className="col">
-            {/* <Link to="/"> */}
+            <Link to="/atividade">
             <img className="icons-24" src={Activity} alt="" />
-            {/* </Link> */}
+            </Link>
           </div>
         </div>
       </div>

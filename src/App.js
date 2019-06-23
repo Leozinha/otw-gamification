@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import Header from './components/layouts/Header';
 import CriarViagem from './components/pages/CriarViagem';
 import Footer from './components/layouts/Footer';
+import Atividade from './components/pages/Atividade';
 // icons
 //import Trophy from './imgs/layout/trophy.png'
-
 
 class App extends Component {
 
@@ -17,7 +17,6 @@ class App extends Component {
     TrophyClick: 0
   }
 
-
   titleViagem = (e) => {
     this.setState({
       title: "Criar Viagem"
@@ -26,7 +25,7 @@ class App extends Component {
 
   render() {
     let { title, entregas, TrophyClick } = this.state;
-
+ 
     // Home
     const home = (
       <div className="d-flex flex-column align-items-center justify-content-center">
@@ -46,18 +45,30 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <Header title={title} TrophyClick={TrophyClick} />
+          <Header title={title} TrophyClick={TrophyClick} tabDisplay={tabDisplay} />
           <Route exact path="/" render={props => (
             <React.Fragment>
               {home}
             </React.Fragment>
           )}/>
             <Route path="/viagem" component={CriarViagem}/>
-            <Footer  />    
+            <Route path="/atividade" component={() => <Atividade tabDisplayVisible={tabDisplayVisible} />}/>
+
+            <Footer tabDisplay={tabDisplay} />    
         </React.Fragment>
       </Router>
     );
   }
 }
+
+const tabDisplay = {
+  visibility:'hidden',
+  display:'none'
+}
+
+const tabDisplayVisible = {
+  visibility:'visible'
+}
+
 
 export default App;
