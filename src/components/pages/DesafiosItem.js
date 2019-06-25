@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export class AtividadeItem extends Component {
+export class DesafiosItem extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id="viagens" className="">
+        <div id="desafio" className="">
         <div id="background" className="white rounded shadow p-2 mt-4">
           <div className="container">
             {/* {userInfo.viagems.map((el, index) => ( */}
@@ -22,9 +22,7 @@ export class AtividadeItem extends Component {
                   
                   <h6 className="text-uppercase font-weight-bold primary-text">{/*</h5>el.estado.estado*/}Maria</h6>
 
-                  {/* <div className="icon-star">
-                  </div>
-                  <span id="review" className="font-weight-bold">3.5</span> */}
+            
                 </div>
 
                 <div className="d-flex flex-row mt-2">
@@ -53,8 +51,7 @@ export class AtividadeItem extends Component {
               </div>
 
             </div>
-            {/* // </Link>
-                    // ))} */}
+           
           </div>
           </div>
         </div>
@@ -67,4 +64,4 @@ const heightContainer = {
   height:'110px'
 }
 
-export default AtividadeItem
+export default DesafiosItem

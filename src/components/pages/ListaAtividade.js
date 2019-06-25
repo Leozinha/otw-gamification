@@ -5,9 +5,9 @@ import AtividadeItem from './AtividadeItem';
 export class ListaAtividade extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <AtividadeItem />
-      </div>
+      </React.Fragment>
     )
   }
 }

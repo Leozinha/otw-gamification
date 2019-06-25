@@ -120,6 +120,16 @@ h6{
 .icons-36 { width: 36px; }
 .icons-48 { width: 48px; }
 
+/* Badges */
+
+.badges-md {
+    width: 78px;
+}
+
+.badges-sm {
+    width: 48px;
+}
+
 /* criar viagem */
 
 textarea,
@@ -334,3 +344,74 @@ Colors - background
     border: 1px solid #00C653;
 }
 
+.viagens-desafios{
+    background-color: #F6C14C;
+}
+
+.locais-desafios{
+    background-color: #2734DF;
+}
+
+.bomCondutor-desafios{
+    background-color: #236A36;
+}
+/* Text Color */
+
+.white-text{
+    color: #FCFCFC;
+}
+
+.white-back-text{
+    color: #F7F7F7;
+}
+
+.black-text {
+    color: #000000;
+}
+
+.gray-text {
+    color: #9A9B9C;
+}
+
+.gray-2-text {
+    color: #A9AAAB;
+}
+.gray-3-text {
+    color: #B5B6B6;
+}
+
+.primary-text {
+    color: #1220DC;
+}
+
+.primary-2-text {
+    color: #293FC0;
+}
+
+.primary-3-text {
+    color: #3D48E2;
+}
+
+.primary-3-text {
+    color: #6069E7;
+}
+
+.primary-4-text {
+    color: #7179E9;
+}
+
+.sucess-text{
+    color: #00C653;
+}
+
+.sucess-2-text{
+    color: #45D580;
+}
+
+.pendente-text{
+    color: #FF895B;
+}
+
+.pendente-2-text{
+    color: #FFA886;
+}

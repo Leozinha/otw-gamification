@@ -11,10 +11,7 @@ class Header extends Component {
 
   state = {
     trophyURL: Trophy,
-    trophyActiveURL: TrophyActive,
     user: User,
-    userActive: UserActive,
-
   }
 
   notActive = () => {
@@ -37,6 +34,7 @@ class Header extends Component {
   }
 
   activeProfile(e) {
+
     this.setState({
       user: UserActive,
       trophyURL: Trophy
@@ -66,11 +64,16 @@ class Header extends Component {
     const Trophy = this.state.trophyURL;
     const User = this.state.user;
 
+    if(this.props.notActive){
+    
+      console.log('header-click-mais-page')
+    }
+
     let { title, tabDisplay } = this.props;
 
     return (
       <React.Fragment>
-        <div onClick={this.notActive} className="navbar background align-items-center justify-content-center text-center white shadow bring-to-front">
+        <div className="navbar background align-items-center justify-content-center text-center white shadow bring-to-front">
           <div className="container p-0">
             <div className="col p-0">
               <Link to="/"><img className="icons-36" src={Logo} alt="" /></Link>
@@ -78,13 +81,13 @@ class Header extends Component {
             <div className="col-6">
               <h6 className="font-weight-normal mb-0">{title}</h6>
             </div>
-            <div className="col text-right p-0">
+            <div onClick={(e) => this.activeTrophy(e)} className="col text-right p-0">
 
-              <img className="icons-24" onClick={(e) => this.activeTrophy(e)} src={Trophy} alt="" />
+            <Link to="/desafios"><img className="icons-24"  src={Trophy} alt="" /></Link>
 
             </div>
-            <div className="col pl-3 p-0">
-              <img onClick={(e) => this.activeProfile(e)} className="icons-48" src={User} alt="" />
+            <div onClick={(e) => this.activeProfile(e)} className="col pl-3 p-0">
+              <img  className="icons-48" src={User} alt="" />
             </div>
           </div>
 

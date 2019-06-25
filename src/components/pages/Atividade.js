@@ -6,20 +6,18 @@ export class Atividade extends Component {
   render() {
 
     let { tabDisplayVisible } = this.props;
+    let titleOne = "pedidos";
+    let titleTwo = "viagens";
 
     return (
       <React.Fragment>
       
-      <Tabs tabDisplay={tabDisplayVisible}></Tabs>
+      <Tabs tabActiveOne={tabActiveOne} tabActiveTwo={tabActiveTwo} titleOne={titleOne} titleTwo={titleTwo} tabDisplay={tabDisplayVisible}></Tabs>
 
       <div id="atividade">
         <div className="container">
-          <div className="row">
-            <div className="col">
-                <div className="stage-no-photo white-back d-flex flex-column align-items-center justify-content-start">
-                <ListaAtividade></ListaAtividade>
-                </div>
-            </div>
+          <div className="column">
+                <ListaAtividade></ListaAtividade> 
           </div>
           
         </div>
@@ -28,6 +26,14 @@ export class Atividade extends Component {
     )
     
   }
+}
+
+const tabActiveTwo = {
+  color: '#1220DC'
+}
+
+const tabActiveOne = {
+  color: '#9A9B9C'
 }
 
 //TODO propTypes
