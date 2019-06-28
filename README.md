@@ -15,7 +15,7 @@ npm start
 ## Packages
 
 ```bash
-React horizontal scrolling menu
+# React horizontal scrolling menu
 npm i react-horizontal-scrolling-menu
 
 react-router-dom
