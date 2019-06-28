@@ -12,13 +12,9 @@ npm install
 npm start
 ```
 
-## Quick Start
+## Packages
 
 ```bash
-# Install dependencies
-npm install
-
-# Serve on localhost:3000
-npm start
-```
+npm i react-horizontal-scrolling-menu
+react-router-dom
 
