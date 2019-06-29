@@ -21,5 +21,8 @@ npm install --save react-horizontal-scrolling-menu
 # React Circular Progressbar
 npm install --save react-circular-progressbar
 
+# React Visibility Sensor
+npm install react-visibility-sensor
+
 react-router-dom
 
