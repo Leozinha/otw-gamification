@@ -16,7 +16,11 @@ npm start
 
 ```bash
 # React horizontal scrolling menu
-npm i react-horizontal-scrolling-menu
+npm install --save react-horizontal-scrolling-menu
+
+# React Circular Progressbar
+npm install --save react-circular-progressbar
+
 
 react-router-dom
 
