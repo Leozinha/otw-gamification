@@ -1,67 +1,82 @@
 import React, { Component } from 'react'
+// import ProgressDesafios from '../svgComp/ProgressDesafios';
 
 export class DesafiosItem extends Component {
   render() {
+
+    const { showDesafioProgress } = this.props;
+
     return (
       <React.Fragment>
         <div id="desafio" className="">
-        <div id="background" className="white rounded shadow p-2 mt-4">
-          <div className="container">
-            {/* {userInfo.viagems.map((el, index) => ( */}
-            {/* // <Link className="link-no-decoration" to={{pathname: '/atividade2/'+el.id, state: { produto: el.produto }}}> */}
-            <div className="row">
+          <div id="background" className="white rounded shadow p-2 mt-3 mb-3">
+            <div className="container">
+              {/* {userInfo.viagems.map((el, index) => ( */}
+              {/* // <Link className="link-no-decoration" to={{pathname: '/atividade2/'+el.id, state: { produto: el.produto }}}> */}
+              {showDesafioProgress ?
+              <div className="row align-items-center">
 
-              <div className="col-1 previewComponent-md">
-                <div id="image-default" className="image-default">
-                </div>
-              </div>
-
-              <div className="col-5 d-flex flex-column justify-content-center align-items-start">
-
-                <div className="align-items-center">
-                  
-                  <h6 className="text-uppercase font-weight-bold primary-text">{/*</h5>el.estado.estado*/}Maria</h6>
-
-            
+                <div className="col-3 pl-1 previewComponent-md">
+                  <img className="badges-md" src={require(`../../imgs/pages/badge-entregas.png`)} alt="" />
                 </div>
 
-                <div className="d-flex flex-row mt-2">
-                  <div className="date-icon">
-                  </div>
-                  <span id="date" className="subtitle-1">{/*el.data*/}15/07/2019</span>
+              
+
+                <div className="col-7 d-flex flex-column justify-content-center align-items-center">
+
+                  <span id="desafio" className="subtitle-2 font-weight-bold text-desafio">Entrega 12 encomendas num mes</span>
+
+                    <div class="progress w-100 mt-2">
+                      <div class="progress-bar" role="progressbar" style={Width} aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+
+                  <span id="XP" className="align-self-end subtitle-2 font-weight-bold body-2">25XP</span>
+
                 </div>
-                <div className="d-flex flex-row">
-                  <div className="time-icon">
-                  </div>
-                  <span id="time" className="subtitle-1">18:00{/*el.horaInicio*/}-19:00{/*el.horaFim*/}</span>
+
+                <div className="col-2 pt-1 pb-1 d-flex flex-column justify-content-between align-items-end font-weight-bold body-1">
+
+                  <span /*className="subtitle-2"*/>1</span>/12
+    
+              </div>
+              
+              </div>
+              :
+              <div className="row align-items-center">
+
+              <div className="col-3 pl-1">
+                  <img className="badges-md" src={require(`../../imgs/pages/badge-entregas.png`)} alt="" />
                 </div>
+
+              <div className="col-7 d-flex flex-column justify-content-center align-items-center">
+
+                  <span className="text-uppercase subtitle-2 align-self-start text-uppercase">entrega</span>
+                  <span id="desafio" className="subtitle-1 pt-1 text-desafio">Entrega 12 encomendas num mes</span>
+
+                   
+                  {/* <span id="XP" className="subtitle-2">25XP</span> */}
+
+                </div>
+
+                <div className="col-2 d-flex flex-column justify-content-between align-items-end subtitle-2 font-weight-bold body-1">
+
+                25XP
+    
+              </div>
               </div>
 
-              <div style={heightContainer} className="col-4 pt-1 pb-1 d-flex flex-column justify-content-between align-items-end">
-                <h6 className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.origem*/}Aveiro</h6>
-                <h6 className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.destino*/}Porto</h6>
-              </div>
-
-              <div className="location-img">
-
-              </div>
-
-              <div className="col-1 d-flex justify-content-center align-items-center">
-                <h5 className="font-weight-bold"> {/*el.preco*/}€</h5>
-              </div>
-
+}
             </div>
-           
-          </div>
           </div>
         </div>
-        </React.Fragment>
+      </React.Fragment>
     )
   }
 }
 
-const heightContainer = {
-  height:'110px'
+const Width = {
+  width: '25%'
 }
 
 export default DesafiosItem

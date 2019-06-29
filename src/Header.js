@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import Logo from '../../imgs/layout/logo.png'
-import Trophy from '../../imgs/layout/trophy.png'
-import TrophyActive from '../../imgs/layout/trophy-active.png'
-import User from '../../imgs/layout/user.png'
-import UserActive from '../../imgs/layout/user-active.png'
-import Tabs from '../functions/Tabs';
+import Logo from './imgs/layout/logo.png'
+import Trophy from './imgs/layout/trophy.png'
+import TrophyActive from './imgs/layout/trophy-active.png'
+import User from './imgs/layout/user.png'
+import UserActive from './imgs/layout/user-active.png'
+import Tabs from './components/functions/Tabs';
 
 class Header extends Component {
 
@@ -18,6 +18,8 @@ class Header extends Component {
 
     this.setState({ trophyURL: Trophy });
     this.setState({ user: User });
+
+    console.log('click-header')
 
   }
 
@@ -64,16 +66,11 @@ class Header extends Component {
     const Trophy = this.state.trophyURL;
     const User = this.state.user;
 
-    if(this.props.notActive){
-    
-      console.log('header-click-mais-page')
-    }
-
     let { title, tabDisplay } = this.props;
 
     return (
       <React.Fragment>
-        <div className="navbar background align-items-center justify-content-center text-center white shadow bring-to-front">
+        <div onClickCapture={this.props.click} className="navbar background align-items-center justify-content-center text-center white shadow bring-to-front">
           <div className="container p-0">
             <div className="col p-0">
               <Link to="/"><img className="icons-36" src={Logo} alt="" /></Link>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import LogoFooter from '../../imgs/layout/menu-logo.png'
-import LogoFooterActive from '../../imgs/layout/menu_logo-active.png'
+import LogoFooterActive from '../../imgs/layout/logo_active.png'
 import Search from '../../imgs/layout/search.png'
 import Create from '../../imgs/layout/trip.png'
-import CreateActive from '../../imgs/layout/trip_active.png'
+import CreateActive from '../../imgs/layout/trip_click.png'
 import Message from '../../imgs/layout/message.png'
 import Activity from '../../imgs/layout/activity.png'
 import ActivityActive from '../../imgs/layout/activity_active.png'
@@ -27,6 +27,8 @@ class Footer extends Component {
        });
     
     }
+
+
 
     activeLogo(e) {
 
@@ -69,7 +71,7 @@ class Footer extends Component {
     let { logo, create, activity } = this.state;
 
     return (
-      <div onClick={this.notActive} className="navbar background align-items-center justify-content-center text-center white shadow mt-auto">
+      <div onClickCapture={this.props.click} className="navbar background align-items-center justify-content-center text-center white shadow mt-auto">
         <div className="container p-0">
           <div className="col" onClick={(e) => this.activeLogo(e)}>
             {/* <Link to="/"> */}

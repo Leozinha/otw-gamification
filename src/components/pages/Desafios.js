@@ -1,24 +1,67 @@
 import React, { Component } from 'react'
 import Tabs from '../functions/Tabs';
 import ListaDesafios from '../pages/ListaDesafios';
-import badgeEntregas from '../../imgs/pages/badge-entregas.png'
-import badgeLocais from '../../imgs/pages/badge-volume.png'
-import badgeBomCondutor from '../../imgs/pages/badge-distancia.png'
+import ScrollMenu from 'react-horizontal-scrolling-menu';
 
+const imgsViagens = [
+  { badge: 'badge-entregas' },
+  { badge: 'badge-volume' },
+  { badge: 'badge-distancia' }
+]
+
+const imgsLocais = [
+  { badge: 'badge-viciado' },
+  { badge: 'badge-explorador' },
+]
+
+const imgsBomCondutor = [
+  { badge: 'badge-exemplar' },
+  { badge: 'badge-leal' },
+  { badge: 'badge-satisfacao' },
+  { badge: 'badge-pontual' },
+  { badge: 'badge-disponivel' }
+]
+
+export const BadgesViagens = (imgsViagens) =>
+  imgsViagens.map(el => {
+
+    const showBadgesConquered = false;
+    
+    return showBadgesConquered ?
+      <img className="badges-md" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />
+      :
+      <img className="badges-md unavailable" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />
+
+
+  });
+
+export const BadgesLocais = (imgsLocais) =>
+  imgsLocais.map(el => {
+
+    return <img className="badges-md" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />;
+  });
+
+export const BadgesBomCondutor = (imgsBomCondutor) =>
+  imgsBomCondutor.map(el => {
+
+    return <img className="badges-md" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />;
+  });
 
 class Desafios extends Component {
 
   state = {
-    showViagens:false,
-    showLocais:false,
-    showBomCondutor:false
+    showViagens: false,
+    showLocais: false,
+    showBomCondutor: false,
+    showDesafioProgress: true,
+    showBadgesConquered: false
   }
 
   showListViagens = () => {
     let showViagens = this.state.showViagens;
 
     this.setState({
-      showViagens:!showViagens,
+      showViagens: !showViagens,
     })
   }
 
@@ -26,7 +69,7 @@ class Desafios extends Component {
     let showLocais = this.state.showLocais;
 
     this.setState({
-      showLocais:!showLocais,
+      showLocais: !showLocais,
     })
   }
 
@@ -34,74 +77,99 @@ class Desafios extends Component {
     let showBomCondutor = this.state.showBomCondutor;
 
     this.setState({
-      showBomCondutor:!showBomCondutor,
+      showBomCondutor: !showBomCondutor,
     })
   }
 
   render() {
 
+    let showDesafioProgress = this.state.showDesafioProgress;
+
     let { tabDisplayVisible } = this.props;
     let titleOne = "desafios";
     let titleTwo = "ranking";
+
+    // IMAGES
+    this.BadgesViagens = BadgesViagens(imgsViagens);
+    this.BadgesLocais = BadgesViagens(imgsLocais);
+    this.BadgesBomCondutor = BadgesViagens(imgsBomCondutor);
+
+    const dataViagens = this.BadgesViagens;
+    const dataLocais = this.BadgesLocais;
+    const dataBomCondutor = this.BadgesBomCondutor;
+
 
     return (
       <React.Fragment>
 
         <Tabs tabActiveOne={tabActiveOne} tabActiveTwo={tabActiveTwo} titleOne={titleOne} titleTwo={titleTwo} tabDisplay={tabDisplayVisible}></Tabs>
 
-        <div id="desafios">
+        <div id="desafios" className="desafios-color">
           <div className="container">
             <div className="column">
-            {/* Viagens */}
-            {this.state.showViagens ? 
+              {/* Viagens */}
+              <div id="viagem">
+                {this.state.showViagens ?
 
-             <h5 onClick={this.showListViagens}>Viagens</h5>
-            : 
-            <div id="viagens" className="row align-items-center rounded shadow viagens-desafios p-3" onClick={this.showListViagens}>
-                <div className="col-4"><h5>Viagens</h5></div>
-                <div id="badges" className="col-4 d-flex align-items-center">
-                  <div className="col"><img className="badges-md" src={badgeEntregas} alt="" /></div>
-                  <div className="col"><img className="badges-md" src={badgeLocais} alt="" /></div>
-                  <div className="col"><img className="badges-md" src={badgeBomCondutor} alt="" /></div>
-                </div>
-                
-              </div> 
-              
-            }
-            
-            {this.state.showViagens ? <ListaDesafios /> : null}
+                  <h5 className="viagens-color mt-3 font-weight-bold" onClick={this.showListViagens}>Viagens</h5>
+                  :
+                  <div id="viagens-badges" className="row align-items-center rounded shadow viagens-desafios pt-3 pb-3 pl-4" onClick={this.showListViagens}>
+                    <div className="col-4 font-weight-bold"><h5>Viagens</h5></div>
+                    <div id="badges" className="col-8 p-0 align-items-center">
 
-            {/* Locais */}
-            
-            {this.state.showLocais ? 
+                      <ScrollMenu
+                        data={dataViagens}
+                      />
 
-              <h5 onClick={this.showListLocais}>Locais</h5>
-            : 
-            <div id="locais" className="row rounded shadow viagens-desafios p-3" onClick={this.showListLocais}>
-                <div className="col-4">Hello</div>
-                <div className="col-4">Hello</div>
-                <div className="col-4">Hello</div>
+                    </div>
+
+                  </div>
+
+                }
               </div>
-              
-            }
+              {this.state.showViagens ? <ListaDesafios showDesafioProgress={showDesafioProgress} /> : null}
 
-            {this.state.showLocais ? <ListaDesafios /> : null}
+              {/* Locais */}
+              <div id="locais">
+                {this.state.showLocais ?
 
-            {/* Bom Condutor */}
+                  <h5 className="locais-color mt-3 font-weight-bold" onClick={this.showListLocais}>Locais</h5>
+                  :
+                  <div id="locais-badges" className="row align-items-center rounded shadow locais-desafios pt-3 pb-3 pl-4 mt-3 mb-2" onClick={this.showListLocais}>
+                    <div className="col-4 font-weight-bold"><h5>Locais</h5></div>
+                    <div id="badges" className="col-8 p-0 align-items-center">
 
-            {this.state.showBomCondutor ? 
+                      <ScrollMenu
+                        data={dataLocais}
+                      />
 
-            <h5 onClick={this.showListBomCondutor}>Bom Condutor</h5>
-            : 
-            <div id="locais" className="row rounded shadow viagens-desafios p-3" onClick={this.showListBomCondutor}>
-              <div className="col-4">Hello</div>
-              <div className="col-4">Hello</div>
-              <div className="col-4">Hello</div>
-            </div>
+                    </div>
+                  </div>
 
-            }
+                }
+              </div>
+              {this.state.showLocais ? <ListaDesafios showDesafioProgress={showDesafioProgress} /> : null}
 
-            {this.state.showBomCondutor ? <ListaDesafios /> : null}
+              {/* Bom Condutor */}
+              <div id="bom-condutor">
+                {this.state.showBomCondutor ?
+
+                  <h5 className="bomCondutor-color mt-3 font-weight-bold" onClick={this.showListBomCondutor}>Bom Condutor</h5>
+                  :
+                  <div id="bom-condutor-badges" className="row align-items-center rounded shadow bomCondutor-desafios pt-3 pb-3 pl-4" onClick={this.showListBomCondutor}>
+                    <div className="col-4 mt-3 font-weight-bold"><h5>Bom Condutor</h5></div>
+                    <div id="badges" className="col-8 p-0 align-items-center">
+
+                      <ScrollMenu
+                        data={dataBomCondutor}
+                      />
+
+                    </div>
+                  </div>
+
+                }
+              </div>
+              {this.state.showBomCondutor ? <ListaDesafios showDesafioProgress={showDesafioProgress} /> : null}
 
             </div>
 
@@ -120,5 +188,31 @@ const tabActiveTwo = {
 const tabActiveOne = {
   color: '#1220DC'
 }
+
+// // Dynamic Colors
+
+// const ViagemColor = {
+//   color: '#f6c14c'
+// }
+
+// const ViagemProgress = {
+//   backgroundColor: '#f6c14c'
+// }
+
+// const LocaisColor = {
+//   color: '#2734df'
+// }
+
+// const LocaisProgress = {
+//   backgroundColor: '#2734df'
+// }
+
+// const BomCondutorColor = {
+//   color: '#236a36'
+// }
+
+// const BomCondutorProgress = {
+//   backgroundColor: '#236a36'
+// }
 
 export default Desafios
