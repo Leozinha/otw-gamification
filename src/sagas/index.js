@@ -8,13 +8,14 @@
 // import mySagaUserPOST from './PostUser';
 // import mySagaReviewPOST from './PostReview';
 
+import mySagaLeaderboards from './getLeaderboardpoints';
 
 
 
 // import tokenSaga from './auth';
 
 
-// import { fork } from 'redux-saga/effects';
+import { fork } from 'redux-saga/effects';
 
 
 function* rootSaga() {
@@ -29,7 +30,7 @@ function* rootSaga() {
     // fork(mySagaUserPOST),
     // fork(mySagaReviewPOST),
 
-    // fork(tokenSaga),
+    fork(mySagaLeaderboards),
   ]
 }
 

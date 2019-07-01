@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 // import viagems from "../reducers/viagems";
 // import userInfo from "../reducers/users";
 // import review from "../reducers/review";
-
+import leaderboardpoints from "../reducers/leaderboardpoints";
 
 
 // importar os sagas da aplicação
