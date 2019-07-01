@@ -16,7 +16,7 @@ function addViagemPOST(viagem){
     horaInicio: horaInicioBody,
     horaFim: horaFimBody,
     preco: viagem.payload.preco,
-    tamanho: viagem.payload.tamanho,
+    // tamanho: viagem.payload.tamanho,
     user_id: 1,
   }));
 
@@ -34,7 +34,7 @@ function addViagemPOST(viagem){
       horaInicio: horaInicioBody,
       horaFim: horaFimBody,
       preco: viagem.payload.preco,
-      tamanho: viagem.payload.tamanho,
+      // tamanho: viagem.payload.tamanho,
       user_id: 3,
       tipo_id: viagem.payload.tipo_id,
     })
