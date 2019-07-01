@@ -143,15 +143,15 @@ class CriarViagem extends Component {
                   </div>
                 </div>
 
-                  <label className="pl-2 subtitle-2 text-uppercase align-self-center">O que posso levar</label>
+                  {/* <label className="pl-2 subtitle-2 text-uppercase align-self-center">O que posso levar</label> */}
 
                 
               <div className="form-group mr-2 ml-2 d-flex flex-column align-items-center">
-                  <select id="tamanho" /*value={tamanho} onChange={this.handleChange}*/ className="custom-select custom-select-lg font-weight-normal">
-                    <option value="grande">Grande&nbsp;(até 50kg)</option>
-                    <option value="medio">Médio&nbsp;(até 30kg)</option>
-                    <option value="pequeno">Pequeno&nbsp;(até 10kg)</option>
-                  </select>
+                  {/* <select id="tamanho" value={tamanho} onChange={this.handleChange} className="custom-select custom-select-lg font-weight-normal"> */}
+                    {/* <option value="grande">Grande&nbsp;(até 50kg)</option> */}
+                    {/* <option value="medio">Médio&nbsp;(até 30kg)</option> */}
+                    {/* <option value="pequeno">Pequeno&nbsp;(até 10kg)</option> */}
+                  {/* </select> */}
                   <div className="mt-5 primary-btn primary text-center blue-btn">
 
                     <button type="submit" className="btn-size btn-style white-text link-no-decoration">
