@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import AtividadeItem from './AtividadeItem';
 
+import { connect } from "react-redux";
 
-export class ListaAtividade extends Component {
+
+class ListaAtividade extends Component {
   render() {
     return (
       <React.Fragment>
@@ -12,4 +14,5 @@ export class ListaAtividade extends Component {
   }
 }
 
-export default ListaAtividade
+const ListaAtividadeExp = connect(null, null)(ListaAtividade);
+export default ListaAtividadeExp

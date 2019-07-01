@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import Tabs from '../functions/Tabs';
 import ListaAtividade from './ListaAtividade';
 
-export class Atividade extends Component {
+import { connect } from "react-redux";
+
+class Atividade extends Component {
   render() {
 
     let { tabDisplayVisible } = this.props;
@@ -38,4 +40,5 @@ const tabActiveOne = {
 
 //TODO propTypes
 
-export default Atividade
+const AtividadeExp = connect(null, null)(Atividade);
+export default AtividadeExp

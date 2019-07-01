@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 // import { fetchViagems } from "../actions/viagems";
 
 // const mapDispatchToProps = dispatch => {
@@ -171,5 +171,5 @@ class CriarViagem extends Component {
 }
 
 //TODO propTypes
-
-export default CriarViagem;
+const CriarViagemExp = connect(null, null)(CriarViagem);
+export default CriarViagemExp;

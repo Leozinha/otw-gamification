@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-export class AtividadeItem extends Component {
+import { connect } from "react-redux";
+
+class AtividadeItem extends Component {
   render() {
     return (
       <React.Fragment>
@@ -67,4 +69,5 @@ const heightContainer = {
   height:'110px'
 }
 
-export default AtividadeItem
+const AtividadeItemExp = connect(null, null)(AtividadeItem);
+export default AtividadeItemExp

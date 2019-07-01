@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 // import ProgressDesafios from '../svgComp/ProgressDesafios';
 
-export class DesafiosItem extends Component {
+import { connect } from "react-redux";
+
+class DesafiosItem extends Component {
   render() {
 
     const { showDesafioProgress } = this.props;
@@ -79,4 +81,5 @@ const Width = {
   width: '25%'
 }
 
-export default DesafiosItem
+const DesafiosItemExp = connect(null, null)(DesafiosItem);
+export default DesafiosItemExp

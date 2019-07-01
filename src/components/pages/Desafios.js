@@ -3,6 +3,8 @@ import Tabs from '../functions/Tabs';
 import ListaDesafios from '../pages/ListaDesafios';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 
+import { connect } from "react-redux";
+
 const imgsViagens = [
   { badge: 'badge-entregas' },
   { badge: 'badge-volume' },
@@ -215,4 +217,5 @@ const tabActiveOne = {
 //   backgroundColor: '#236a36'
 // }
 
-export default Desafios
+const DesafiosExp = connect(null, null)(Desafios);
+export default DesafiosExp
