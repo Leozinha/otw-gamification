@@ -24,5 +24,8 @@ npm install --save react-circular-progressbar
 # React Visibility Sensor
 npm install react-visibility-sensor
 
+# Emotion is a library designed for writing css styles with JavaScript
+npm install --save @emotion/core
+
 react-router-dom
 
