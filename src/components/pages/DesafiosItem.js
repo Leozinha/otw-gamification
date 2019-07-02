@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 // import ProgressDesafios from '../svgComp/ProgressDesafios';
 
-export class DesafiosItem extends Component {
+import { connect } from "react-redux";
+
+class DesafiosItem extends Component {
   render() {
 
     const { 
@@ -85,4 +87,5 @@ export class DesafiosItem extends Component {
             
 }
 
-export default DesafiosItem
+const DesafiosItemExp = connect(null, null)(DesafiosItem);
+export default DesafiosItemExp
