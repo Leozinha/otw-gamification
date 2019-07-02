@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Tabs from '../functions/Tabs';
 import ListaDesafios from '../pages/ListaDesafios';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const imgsViagens = [
   { badge: 'badge-entregas' },
@@ -100,9 +101,11 @@ class Desafios extends Component {
 
 
     return (
+      <Router>
       <React.Fragment>
 
-        <Tabs tabActiveOne={tabActiveOne} tabActiveTwo={tabActiveTwo} titleOne={titleOne} titleTwo={titleTwo} tabDisplay={tabDisplayVisible}></Tabs>
+        <Tabs textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}></Tabs>
+
 
         <div id="desafios" className="desafios-color">
           <div className="container">
@@ -113,7 +116,7 @@ class Desafios extends Component {
 
                   <h5 className="viagens-color mt-3 font-weight-bold" onClick={this.showListViagens}>Viagens</h5>
                   :
-                  <div id="viagens-badges" className="row align-items-center rounded shadow viagens-desafios pt-3 pb-3 pl-4" onClick={this.showListViagens}>
+                  <div id="viagens-badges" className="row align-items-center rounded viagens-desafios pt-3 pb-3 pl-4" onClick={this.showListViagens}>
                     <div className="col-4 font-weight-bold"><h5>Viagens</h5></div>
                     <div id="badges" className="col-8 p-0 align-items-center">
 
@@ -135,7 +138,7 @@ class Desafios extends Component {
 
                   <h5 className="locais-color mt-3 font-weight-bold" onClick={this.showListLocais}>Locais</h5>
                   :
-                  <div id="locais-badges" className="row align-items-center rounded shadow locais-desafios pt-3 pb-3 pl-4 mt-3 mb-2" onClick={this.showListLocais}>
+                  <div id="locais-badges" className="row align-items-center rounded locais-desafios pt-3 pb-3 pl-4 mt-3 mb-2" onClick={this.showListLocais}>
                     <div className="col-4 font-weight-bold"><h5>Locais</h5></div>
                     <div id="badges" className="col-8 p-0 align-items-center">
 
@@ -156,7 +159,7 @@ class Desafios extends Component {
 
                   <h5 className="bomCondutor-color mt-3 font-weight-bold" onClick={this.showListBomCondutor}>Bom Condutor</h5>
                   :
-                  <div id="bom-condutor-badges" className="row align-items-center rounded shadow bomCondutor-desafios pt-3 pb-3 pl-4" onClick={this.showListBomCondutor}>
+                  <div id="bom-condutor-badges" className="row align-items-center rounded bomCondutor-desafios pt-3 pb-3 pl-4" onClick={this.showListBomCondutor}>
                     <div className="col-4 mt-3 font-weight-bold"><h5>Bom Condutor</h5></div>
                     <div id="badges" className="col-8 p-0 align-items-center">
 
@@ -177,17 +180,18 @@ class Desafios extends Component {
         </div>
 
       </React.Fragment>
+      </Router>
     )
   }
 }
 
-const tabActiveTwo = {
-  color: '#9A9B9C'
-}
+// const tabActiveTwo = {
+//   color: '#9A9B9C'
+// }
 
-const tabActiveOne = {
-  color: '#1220DC'
-}
+// const tabActiveOne = {
+//   color: '#1220DC'
+// }
 
 // // Dynamic Colors
 

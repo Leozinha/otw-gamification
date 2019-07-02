@@ -9,6 +9,10 @@ html {
   height: 100%;
 }
 
+svg path {
+  fill: none;
+}
+
 body {
   font-family: "Lato", sans-serif;
   color: #555;
@@ -19,11 +23,23 @@ a {
   text-decoration: none;
 }
 
+a.active{
+  background-color:#1220dc;
+  color: #1220DC; 
+}
+
+.navbar.container.viagem.active{
+  background-color:#1220dc;
+  color: #1220DC; 
+}
+
 svg path {
     fill: none;
     stroke-width: 20px;
     stroke-miterlimit: round;
 }
+
+/* Font-sizes */
 
 h3 {
   font-size: 48px;
@@ -94,6 +110,10 @@ h6 {
   font-weight: 500;
   letter-spacing: 0.4;
   line-height: 14px;
+}
+
+label{
+  margin: 0;
 }
 
 /* layout - styling */
@@ -327,10 +347,6 @@ Colors - background
   height: 380px;
 }
 
-.white-back {
-  background-color: #f7f7f7;
-}
-
 .black {
   background-color: #000000;
 }
@@ -458,7 +474,15 @@ Colors - background
   color: #ffa886;
 }
 
-/* Gamification */
+/* Desafios */
+
+.rounded{
+  border-radius: 0.6rem;
+}
+
+.desafios-border{
+  border: 1px solid #C7C7C8;
+}
 
 .desafios-color{
     color: #F6F6F6;
@@ -483,3 +507,88 @@ Colors - background
 .unavailable {
     opacity: 0.5;
 }
+
+/* Radial Progress Bar */
+
+.percentage-background {
+background: #ffffff;
+width: 140px;
+height: 140px;
+border-radius: 100%
+}
+
+/* Home - Gam Activity */
+
+.padding-circle {
+  padding: 0.75rem;
+}
+
+.rounded-background{
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.rounded-background-bottom{
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+  /* Colors */
+
+  .gray-d{
+    color: #999A9B;
+  }
+
+  .gray-md{
+    color: #B6B6BE;
+  }
+
+  .gray-md-2{
+    color: #B7B7BF;
+  }
+
+  .gray-l{
+    color: rgba(122, 123, 128,0.75);
+  }
+
+  .blue-d{
+    color: #0F1BB5;
+  }
+
+  .blue-md{
+    color: #1220DC;
+  }
+
+  .blue-md-2{
+    color: #2734DF;
+  }
+
+  .blue-l{
+    color: rgb(39, 52, 222,0.70);
+  }
+
+  .white-md{
+    color: 	#F6F6F6;
+  }
+
+  .white-l{
+    color: 	rgb(227, 228, 229,0.70);
+  }
+
+  .gradient-blue{
+    background: linear-gradient(180deg, rgba(39,52,222,1) 0%, rgba(18,32,219,1) 50%, rgba(15,27,180,1) 89%);   }
+
+  /* Background-Colors */
+
+  .white-back {
+      background-color: #ffffff;
+    }
+
+  .blue-d-background{
+    background-color: #0F1BB5;
+  }
+
+  .gray-background{
+    background-color: #E4E5E6;
+    border: 1px solid #E4E5E6;
+  }

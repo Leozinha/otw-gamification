@@ -5,7 +5,7 @@ import Trophy from './imgs/layout/trophy.png'
 import TrophyActive from './imgs/layout/trophy-active.png'
 import User from './imgs/layout/user.png'
 import UserActive from './imgs/layout/user-active.png'
-import Tabs from './components/functions/Tabs';
+// import Tabs from './components/functions/Tabs';
 
 class Header extends Component {
 
@@ -66,7 +66,7 @@ class Header extends Component {
     const Trophy = this.state.trophyURL;
     const User = this.state.user;
 
-    let { title, tabDisplay } = this.props;
+    let { title } = this.props;
 
     return (
       <React.Fragment>
@@ -80,7 +80,7 @@ class Header extends Component {
             </div>
             <div onClick={(e) => this.activeTrophy(e)} className="col text-right p-0">
 
-            <Link to="/desafios"><img className="icons-24"  src={Trophy} alt="" /></Link>
+            <Link to="/ranking"><img className="icons-24"  src={Trophy} alt="" /></Link>
 
             </div>
             <div onClick={(e) => this.activeProfile(e)} className="col pl-3 p-0">
@@ -89,8 +89,6 @@ class Header extends Component {
           </div>
 
         </div>
-        
-        <Tabs tabDisplay={tabDisplay}></Tabs>
 
       </React.Fragment>
     )

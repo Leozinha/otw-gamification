@@ -1,23 +1,39 @@
+//TODO true/false para a Tabs
+
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import VisibilitySensor from "react-visibility-sensor";
 
+// Pages
 import Header from './Header';
 import CriarViagem from './components/pages/CriarViagem';
 import Footer from './components/layouts/Footer';
 import Atividade from './components/pages/Atividade';
 import Desafios from './components/pages/Desafios';
 import DragBadges from './components/pages/DragBadges';
-// Import module and default styles
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 
+// Import module and default styles
+import "react-circular-progressbar/dist/styles.css";
+import Radial from './components/pages/Radial';
+
+// Images
+import RankingIcon from './imgs/layout/ranking.png';
+import DesafiosAtivosIcon from './imgs/layout/desafios-activos.png';
+import PreviewDesafiosAtivos from './components/pages/PreviewDesafiosAtivos';
+import PreviewDesafios from './components/pages/PreviewDesafios';
+import Ranking from './components/pages/Ranking';
+import Tabs from './components/functions/Tabs';
+
+const elementID = [
+  { id: 1},
+  { id: 2 },
+  { id: 3}
+]
 
 class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.Header = React.createRef();
     this.Footer = React.createRef();
@@ -25,13 +41,12 @@ class App extends Component {
 
   state = {
     title: "",
-    entregas: 0
+    showGam: false,
+    showDesafioAtivos: false
   }
 
   notActiveHeader = (e) => {
     this.Header.current.notActive();
-
-   
   }
 
   notActiveFooter = (e) => {
@@ -47,72 +62,123 @@ class App extends Component {
   }
 
   render() {
-    let { title, entregas } = this.state;
+    let { title, showGam, showDesafioAtivos } = this.state;
 
-  
-  
-    // Home
     const home = (
-      <div className="d-flex flex-column align-items-center justify-content-center">
-        <div className="p-2"><h5>Pedir</h5></div>
-        <div onClick={this.titleViagem} className="p-2"><h5><Link to="/viagem">Criar</Link></h5></div>
-        <div style={{ width: "100px" }}>
-          <p>This should animate only when visible</p>
-          <VisibilitySensor>
-            {({ isVisible }) => {
-              const percentage = isVisible ? 90 : 0;
-              return (
-                <CircularProgressbar
-                  value={percentage}
-                  text={`${percentage}%`}
-                />
-              );
-            }}
-          </VisibilitySensor>
-          </div>
-      </div>
-    );
-    // Home Gamificada
-    if (entregas !== 0) {
-      return (
-        <div>
-          <h1>Home Gamificada</h1>
+      showGam ?
+        // Home
+        <div className="d-flex flex-column align-items-center justify-content-center">
+          <div className="p-2"><h5>Pedir</h5></div>
+          <div onClick={this.titleViagem} className="p-2"><h5><Link to="/viagem">Criar</Link></h5></div>
         </div>
-      );
-    }
+        :
+        // Home Gam
+        <div className="d-flex flex-column align-items-center justify-content-center">
+          <div className="container">
+            <div className="row align-items-center justify-content-between mt-3 mb-3">
+              <div className="col">
+                <h4 className="gray-d mb-0">Bem vindo,</h4>
+                <h4 id="user" className="blue-md-2 font-weight-bold">Zé Pedro</h4></div>
+              <div className="col-4">
+                <div style={{ width: '75px' }} className="white-back rounded-circle shadow d-flex flex-column padding-circle align-items-center justify-content-center blue-md font-weight-bold">
+                  <label className="subtitle-1 mb-0">nível</label>
+                  <h5 id="nivel" className="mb-0 font-weight-bold">3</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="container p-0">
+            <div className="gradient-blue rounded-background" style={{ height: '431px' }}>
+
+              <div className="d-flex flex-column align-items-center justify-content-center">
+                <Radial />
+                <div className="d-flex flex-column mt-3 mb-4">
+                  <label id="desafio-recente" className="subtitle-2 text-uppercase white-l mb-0">desafio atual</label>
+                  <label id="desafio-recente-descricao" className="subtitle-1 font-weight-bold white-md">Entrega 12 encomendas num mes</label>
+                </div>
+                <div className="container pt-2">
+                  <div className="d-flex row align-items-center justify-content-around white-back rounded-background shadow pt-4 pb-4">
+                    <div className="d-flex flex-column align-items-center">
+                      <img src={DesafiosAtivosIcon} alt="" className="icons-24" />
+                      <h5 id="desafios-ativos" className="m-1 font-weight-bold blue-d">2</h5>
+                      <label className="w-50 subtitle-1 text-uppercase font-weight-bold text-center gray-l">Desafios Activos</label>
+                    </div>
+                    <div className="d-flex flex-column align-items-center pr-4">
+                      <img src={RankingIcon} alt="" className="icons-24" />
+                      <h5 id="lugar-ranking" className="m-1 font-weight-bold blue-d">29º</h5>
+                      <label className="subtitle-1 text-uppercase font-weight-bold text-center gray-l">Lugar</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="container p-0">
+                  <div className="gray-background rounded-background-bottom">
+                    <div className="d-flex flex-column align-items-center justify-content-center">
+                      <PreviewDesafiosAtivos 
+                      previewDesafiosAtivos={elementID}
+                      showDesafioAtivos={showDesafioAtivos}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="container p-0">
+                  <div className="white-background rounded-background-bottom">
+                    <div className="d-flex flex-column align-items-center justify-content-center">
+
+                      <div className="align-self-start pl-4 pt-3">
+                        <label className="subtitle-2 text-uppercase blue-md-2">outros desafios</label>
+                        </div>
+
+                      <PreviewDesafios />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    );
 
     return (
       <div id="App" className="d-flex flex-column">
-      <Router>          
-        <React.Fragment>
-          <Header ref={this.Header} title={title} tabDisplay={tabDisplay} click={this.notActiveFooter} />
-          <Route exact path="/" render={props => (
-            <React.Fragment>
-              {home}
-            </React.Fragment>
-          )}/>
-            <Route path="/viagem" component={CriarViagem}/>
-            <Route path="/message" component={DragBadges}/>
+        <Router>
+          <React.Fragment>
+            <Header ref={this.Header} title={title} click={this.notActiveFooter} />
 
-            <Route path="/atividade" component={() => <Atividade tabDisplayVisible={tabDisplayVisible} />}/>
-            <Route path="/desafios" component={() => <Desafios tabDisplayVisible={tabDisplayVisible} />}/>
+            <Tabs tabDisplay={tabDisplay}/>
 
-            <Footer ref={this.Footer} click={this.notActiveHeader} />    
-            
-        </React.Fragment>
-      </Router>
+            <Route exact path="/" render={props => (
+              <React.Fragment>
+                {home}
+              </React.Fragment>
+            )} />
+
+            <Route path="/viagem" component={CriarViagem} />
+            <Route path="/message" component={DragBadges} />
+
+            <Route path="/atividade" component={() => <Atividade />} />
+            <Route path="/desafios" component={() => <Desafios />} />
+            <Route path="/ranking" component={() => <Ranking />} />
+
+
+            <Footer ref={this.Footer} click={this.notActiveHeader} />
+
+          </React.Fragment>
+        </Router>
       </div>
     );
   }
 }
 
 const tabDisplay = {
-  visibility:'hidden',
-  display:'none'
+  visibility: 'hidden',
+  display: 'none'
 }
 
-const tabDisplayVisible = {
-  visibility:'visible'
-}
+// const tabDisplayVisible = {
+//   visibility: 'visible'
+// }
 
 export default App;

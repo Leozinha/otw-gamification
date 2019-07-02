@@ -71,7 +71,7 @@ class Footer extends Component {
     let { logo, create, activity } = this.state;
 
     return (
-      <div onClickCapture={this.props.click} className="navbar background align-items-center justify-content-center text-center white shadow mt-auto">
+      <div onClickCapture={this.props.click} className="navbar background align-items-center justify-content-center text-center white shadow mt-auto" style={{ position:'fixed',bottom: 0,width:'100%' }}>
         <div className="container p-0">
           <div className="col" onClick={(e) => this.activeLogo(e)}>
             {/* <Link to="/"> */}
