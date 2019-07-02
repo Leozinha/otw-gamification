@@ -64,10 +64,10 @@ class CriarViagem extends Component {
       const { horaInicio } = this.state;
       const { horaFim } = this.state;
 
-      this.props.fetchViagems({ origem, destino, /*tamanho,*/ nomeProduto, dataViagem, horaInicio, horaFim });
-      this.props.history.push('/condutores',{
-          state: { origem, destino, /*tamanho,*/ nomeProduto, dataViagem, horaInicio, horaFim }
-      });
+      this.props.addViagem({ origem, destino, /*tamanho,*/ nomeProduto, dataViagem, horaInicio, horaFim });
+      // this.props.history.push('/condutores',{
+      //     state: { origem, destino, /*tamanho,*/ nomeProduto, dataViagem, horaInicio, horaFim }
+      // });
       this.setState({ origem: "" , destino: "", /*tamanho: "",*/ preco: "", dataViagem: "", horaInicio: "", horaFim: ""});
   }
 
