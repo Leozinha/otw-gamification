@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import AtividadeItem from './AtividadeItem';
+import ViagensItem from './ViagensItem';
 
 // import { connect } from "react-redux";
 
 
-class ListaAtividade extends Component {
+class ViagensLista extends Component {
   render() {
     return (
       <React.Fragment>
-        <AtividadeItem />
+        <ViagensItem />
       </React.Fragment>
     )
   }
 }
 
 // const ListaAtividadeExp = connect(null, null)(ListaAtividade);
-export default ListaAtividade
+export default ViagensLista

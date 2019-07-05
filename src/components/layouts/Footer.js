@@ -83,7 +83,7 @@ class Footer extends Component {
             {/* </Link> */}
           </div>
           <div className="col" onClick={(e) => this.activeCreate(e)}>
-            <Link to="/viagem">
+            <Link to="/criar-viagem">
             <img className="icons-24"  src={create} alt="" />
             </Link>
           </div>
@@ -93,7 +93,7 @@ class Footer extends Component {
             </Link>
           </div>
           <div className="col" onClick={(e) => this.activeActivity(e)}>
-            <Link to="/atividade">
+            <Link to="/viagens">
             <img className="icons-24" onClick={showTabs} src={activity} alt="" />
             </Link>
           </div>

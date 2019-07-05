@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 // import { connect } from "react-redux";
 
-class AtividadeItem extends Component {
+class ViagensItem extends Component {
   render() {
     return (
       <React.Fragment>
@@ -70,4 +70,4 @@ const heightContainer = {
 }
 
 // const AtividadeItemExp = connect(null, null)(AtividadeItem);
-export default AtividadeItem
+export default ViagensItem

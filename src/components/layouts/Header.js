@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import Logo from './imgs/layout/logo.png'
-import Trophy from './imgs/layout/trophy.png'
-import TrophyActive from './imgs/layout/trophy-active.png'
-import User from './imgs/layout/user.png'
-import UserActive from './imgs/layout/user-active.png'
-// import Tabs from './components/functions/Tabs';
+import Logo from '../../imgs/layout/logo.png'
+import Trophy from '../../imgs/layout/trophy.png'
+import TrophyActive from '../../imgs/layout/trophy-active.png'
+import User from '../../imgs/layout/user.png'
+import UserActive from '../../imgs/layout/user-active.png'
 
 class Header extends Component {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ListaDesafios from '../pages/ListaDesafios';
+import DesafiosLista from './DesafiosLista';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -57,7 +57,7 @@ class Desafios extends Component {
     showViagens: false,
     showLocais: false,
     showBomCondutor: false,
-    showDesafioProgress: false,
+    showDesafioProgress: true,
     showBadgesConquered: false
   }
 
@@ -126,7 +126,7 @@ class Desafios extends Component {
 
                 }
               </div>
-              {this.state.showViagens ? <ListaDesafios showViagens={this.state.showViagens} showDesafioProgress={showDesafioProgress} /> : null}
+              {this.state.showViagens ? <DesafiosLista showViagens={this.state.showViagens} showDesafioProgress={showDesafioProgress} /> : null}
 
               {/* Locais */}
               <div id="locais">
@@ -147,7 +147,7 @@ class Desafios extends Component {
 
                 }
               </div>
-              {this.state.showLocais ? <ListaDesafios showLocais={this.state.showLocais} showDesafioProgress={showDesafioProgress} /> : null}
+              {this.state.showLocais ? <DesafiosLista showLocais={this.state.showLocais} showDesafioProgress={showDesafioProgress} /> : null}
 
               {/* Bom Condutor */}
               <div id="bom-condutor">
@@ -169,7 +169,7 @@ class Desafios extends Component {
 
                 }
               </div>
-              {this.state.showBomCondutor ? <ListaDesafios showBomCondutor={this.state.showBomCondutor} showDesafioProgress={showDesafioProgress} /> : null}
+              {this.state.showBomCondutor ? <DesafiosLista showBomCondutor={this.state.showBomCondutor} showDesafioProgress={showDesafioProgress} /> : null}
 
             </div>
 

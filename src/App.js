@@ -6,10 +6,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 // Pages
-import Header from './Header';
+import Header from './components/layouts/Header';
 import CriarViagem from './components/pages/CriarViagem';
 import Footer from './components/layouts/Footer';
-import Atividade from './components/pages/Atividade';
+import Viagens from './components/pages/Viagens';
+import Pedidos from './components/pages/Pedidos';
 import Desafios from './components/pages/Desafios';
 
 // Import module and default styles
@@ -22,7 +23,7 @@ import DesafiosAtivosIcon from './imgs/layout/desafios-activos.png';
 import PreviewDesafiosAtivos from './components/pages/PreviewDesafiosAtivos';
 import PreviewDesafios from './components/pages/PreviewDesafios';
 import Ranking from './components/pages/Ranking';
-import Tabs from './components/functions/Tabs';
+import Tabs from './components/layouts/Tabs';
 
 //example
 const elementID = [
@@ -45,7 +46,6 @@ class App extends Component {
 
   state = {
     title: "",
-    showGam: false,
     showDesafioAtivos: false,
     showTabsGam: false,
     showTabsAtividade:false
@@ -81,8 +81,8 @@ class App extends Component {
       showTabsGam: false
     })
 
-    titleOne = "pedidos";
-    titleTwo = "viagens";
+    titleOne = "viagens";
+    titleTwo = "pedidos";
 
     console.log('click-atividade')
 
@@ -105,18 +105,11 @@ class App extends Component {
   }
 
   render() {
-    let { title, showGam, showDesafioAtivos, showTabsGam, showTabsAtividade } = this.state;
+    let { title, showDesafioAtivos, showTabsGam, showTabsAtividade } = this.state;
 
     console.log(elementID);
 
     const home = (
-      showGam ?
-        // Home
-        <div className="d-flex flex-column align-items-center justify-content-center">
-          <div className="p-2"><h5>Pedir</h5></div>
-          <div onClick={this.titleViagem} className="p-2"><h5><Link to="/viagem">Criar</Link></h5></div>
-        </div>
-        :
         // Home Gam
         <div className="d-flex flex-column align-items-center justify-content-center">
           <div className="container">
@@ -200,7 +193,7 @@ class App extends Component {
 
             {showTabsGam ?
 
-            <Tabs textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}/>
+            <Tabs showTabsGam={showTabsGam} textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}/>
             :
 
             <Tabs tabDisplay={tabDisplay}/>
@@ -222,9 +215,10 @@ class App extends Component {
               </React.Fragment>
             )} />
 
-            <Route path="/viagem" component={CriarViagem} />
+            <Route path="/criar-viagem" component={CriarViagem} />
   
-            <Route path="/atividade" component={() => <Atividade />} />
+            <Route path="/viagens" component={() => <Viagens />} />
+            <Route path="/pedidos" component={() => <Pedidos />} />
             <Route path="/desafios" component={() => <Desafios />} />
             <Route path="/ranking" component={() => <Ranking />} />
 

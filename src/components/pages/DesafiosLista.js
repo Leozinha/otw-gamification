@@ -17,7 +17,7 @@ const greenBadge = {
 }
 
 
-class ListaDesafios extends Component {
+class DesafiosLista extends Component {
   render() {
 
     const { 
@@ -56,4 +56,4 @@ class ListaDesafios extends Component {
 }
 
 // const ListaDesafiosExp = connect(null, null)(ListaDesafios);
-export default ListaDesafios
+export default DesafiosLista

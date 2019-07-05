@@ -5,7 +5,7 @@ import VisibilitySensor from "react-visibility-sensor";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const value = 33;
+const value = 20;
 
 const Radial = () => (
   // <div style={{ padding: "40px 40px 40px 40px" }}>

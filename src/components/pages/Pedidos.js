@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import ListaAtividade from './ListaAtividade';
 
-// import { connect } from "react-redux";
-
-class Atividade extends Component {
+class Pedidos extends Component {
   render() {
 
     return (
@@ -11,7 +8,6 @@ class Atividade extends Component {
       <div id="atividade">
         <div className="container">
           <div className="column">
-                <ListaAtividade></ListaAtividade> 
           </div>
           
         </div>
@@ -25,4 +21,4 @@ class Atividade extends Component {
 //TODO propTypes
 
 // const AtividadeExp = connect(null, null)(Atividade);
-export default Atividade
+export default Pedidos

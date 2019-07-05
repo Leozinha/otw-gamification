@@ -13,13 +13,6 @@ export class Tabs extends Component {
     titleTwo: titleTwo
   }
 
-  // componentWillMount(){
-  //   this.setState({
-  //     titleOne: titleOne,
-  //     titleTwo: titleTwoActive
-  //   });
-  // }
-
   oneColor(e) {
     // e.preventDefault();
     e.stopPropagation();
