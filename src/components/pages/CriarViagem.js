@@ -26,7 +26,7 @@ class CriarViagem extends Component {
       origem: "",
       destino: "",
       // tamanho: "grande",
-      nomeProduto: "",
+      preco: "",
       tipo_id: 1
     };
 
@@ -56,15 +56,36 @@ class CriarViagem extends Component {
 
   handleSubmit(event) {
       event.preventDefault();
-      const { origem } = this.state;
-      const { destino } = this.state;
-      // const { tamanho } = this.state;
-      const { nomeProduto } = this.state;
-      const { dataViagem } = this.state;
-      const { horaInicio } = this.state;
-      const { horaFim } = this.state;
+      // const { origem } = this.state;
+      // const { destino } = this.state;
+      // // const { tamanho } = this.state;
+      // const { nomeProduto } = this.state;
+      // const { dataViagem } = this.state;
+      // const { horaInicio } = this.state;
+      // const { horaFim } = this.state;
 
-      this.props.addViagem({ origem, destino, /*tamanho,*/ nomeProduto, dataViagem, horaInicio, horaFim });
+      const post = {
+        origem : this.state.origem,
+        destino : this.state.destino,
+        preco : this.state.preco,
+        data : this.state.dataViagem.getFullYear() + "-" + (this.state.dataViagem.getMonth()+1) + "-" + this.state.dataViagem.getDate(),
+        horaInicio : this.state.horaInicio.getHours() + ":" + this.state.horaInicio.getMinutes(),
+        horaFim : this.state.horaFim.getHours() + ":" + this.state.horaFim.getMinutes(),
+        tipo_id: 1,
+      }
+      console.log('teste1', JSON.stringify(post));
+
+      
+      fetch('http://localhost:8000/api/viagem',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjQzMTJhMzY1MGE3MTI4ZWYwOGZmM2E2NTBiZDVkZjZlNWQyYjhlNzM4ZTFhMWY4YWUyYjk3YmY1OTRhNjIwNjM3MzcxMmFlMjRkZDdmOTQ1In0.eyJhdWQiOiIxIiwianRpIjoiNDMxMmEzNjUwYTcxMjhlZjA4ZmYzYTY1MGJkNWRmNmU1ZDJiOGU3MzhlMWExZjhhZTJiOTdiZjU5NGE2MjA2MzczNzEyYWUyNGRkN2Y5NDUiLCJpYXQiOjE1NjIzNDE1MzMsIm5iZiI6MTU2MjM0MTUzMywiZXhwIjoxNTkzOTYzOTMzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.m0XnC8tvh_nZIvn-GnVM0p1FwsRATMUWHokpWpjJ7GMRxMZnqjtGgkE-Gl_BcmK0qTIdomtsPPfzok46B3bxPYBLx6WP5QN5YB18AYWsj3jLmn9vUQnL4tFZ7D6tugLkONtFrNBuwntMtXbZt9t8ykWfpZ8g0JVI8A8wlsExRw4Ay0gVfD_QdjmIQfIybLV6mgKkhxsHNqOcPMJid54ZsWcwTB-2jjcRd_MLp6lAnPfQ94sWD0yrM9Gxds27AoEOUsbWd3Nl_m9Z-0Epy9Hy6oLwp6KZi29kxhHpTiBwneLQnD2v2luhrIVb1WtIltsadpgx_diOBIOXnsSdhlN52SSfVDmYdqHcG58S2lwssaA7mWmuD6t6Hd6Rfyn7C5ong6fln3Lx1cU6qSrZMf-QNRsgY4nHmpyGicdyrJVSE3FGBynmuNHmFi2gmUqMLIVVX0KTolQNePvXN2tcz3N5o2eXSTNV3ClgLymDKsOtxB2e-eiYJpdvOiiCHmPg9-ZznjXYDDg5VhNeNfBzEAWdROvx2-KXDQ6T9Up0G2jU4ltApvinVdvZQxdN7dkGwHMgYraWDU2n5MXFP4hOdfMGwg5RMT4Hhw_MDHLdQsirJQea02nvlknCduUFYhlABnVZR4doDwh_F30jdUoi-p4_pMy_TV3zdDqEG1V2BNYDwUk'
+        },
+        body: JSON.stringify(post),
+      }).then(res => res.json(), )
+
+      // this.props.addViagem({ origem, destino, /*tamanho,*/ nomeProduto, dataViagem, horaInicio, horaFim });
       // this.props.history.push('/condutores',{
       //     state: { origem, destino, /*tamanho,*/ nomeProduto, dataViagem, horaInicio, horaFim }
       // });
