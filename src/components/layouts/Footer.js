@@ -28,8 +28,6 @@ class Footer extends Component {
     
     }
 
-
-
     activeLogo(e) {
 
       this.setState({
@@ -69,6 +67,7 @@ class Footer extends Component {
   render() {
 
     let { logo, create, activity } = this.state;
+    let { showTabs } = this.props;
 
     return (
       <div onClickCapture={this.props.click} className="navbar background align-items-center justify-content-center text-center white shadow mt-auto" style={{ position:'fixed',bottom: 0,width:'100%' }}>
@@ -95,7 +94,7 @@ class Footer extends Component {
           </div>
           <div className="col" onClick={(e) => this.activeActivity(e)}>
             <Link to="/atividade">
-            <img className="icons-24"  src={activity} alt="" />
+            <img className="icons-24" onClick={showTabs} src={activity} alt="" />
             </Link>
           </div>
         </div>

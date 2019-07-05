@@ -27,13 +27,7 @@ export class DesafiosItem extends Component {
       showDesafioAtivos
     } = this.state;
 
-    // console.log(previewDesafiosAtivos)
-
     let previewDesafiosAtivosFirst = previewDesafiosAtivos[0].id;
-
-    // console.log(previewDesafiosAtivos[0].id)
-
-    // let Restante = previewDesafiosAtivos[2];
 
     return (
       <React.Fragment>

@@ -1,21 +1,59 @@
 import React, { Component } from 'react'
 import DesafiosItem from './DesafiosItem';
 
+import { connect } from "react-redux";
 
-export class ListaDesafios extends Component {
+
+const yellowBadge = {
+  color:"#f6c14c"
+}
+
+const blueBadge = {
+  color:"#2734df"
+}
+
+const greenBadge = {
+  color:"#236a36"
+}
+
+
+class ListaDesafios extends Component {
   render() {
 
     const { 
       showDesafioProgress, 
-     
+      showViagens,
+      showLocais,
+      showBomCondutor
      } = this.props;
 
+     console.log(showViagens);
     return (
       <React.Fragment>
-        <DesafiosItem showDesafioProgress={showDesafioProgress}/>
+        {
+          showViagens ?
+        <DesafiosItem colorBadge={yellowBadge} showDesafioProgress={showDesafioProgress}/>
+          :
+          null
+        }
+
+        {
+          showLocais ?
+        <DesafiosItem colorBadge={blueBadge} showDesafioProgress={showDesafioProgress}/>
+          :
+          null
+        }
+
+        {
+          showBomCondutor ?
+        <DesafiosItem colorBadge={greenBadge} showDesafioProgress={showDesafioProgress}/>
+          :
+          null
+        }
       </React.Fragment>
     )
   }
 }
 
-export default ListaDesafios
+const ListaDesafiosExp = connect(null, null)(ListaDesafios);
+export default ListaDesafiosExp

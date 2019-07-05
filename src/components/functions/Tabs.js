@@ -10,7 +10,7 @@ const titleTwoActive = "#1220DC";
 export class Tabs extends Component {
 
   state = {
-    titleOne: titleOne,
+    titleOne: titleOneActive,
     titleTwo: titleTwo
   }
 
@@ -38,36 +38,30 @@ export class Tabs extends Component {
 
   render() {
 
-    // let changeColorOne = this.state.titleOne ? "#1220DC" : "#9A9B9C"
-    // let changeColorTwo = this.state.titleTwo ? "#1220DC" : "#9A9B9C"
-
-    let { textOne, textTwo, tabDisplay, tabDisplay2 } = this.props;
+    let { textOne,textTwo,tabDisplay } = this.props;
 
     let { titleOne, titleTwo } = this.state;
-
-    // let tabActiveOne = props.tabActiveOne;
-    // let tabActiveTwo = props.tabActiveTwo;
 
     return (
 
       <React.Fragment>
 
-        <div id="tab" style={tabDisplay2} className="navbar background align-items-center justify-content-center text-center white">
+        <div id="tab" style={tabDisplay} className="navbar background align-items-center justify-content-center text-center white">
           <div className="container p-0">
             <div id="menu-pedido" className="pedido col p-2 primary-gray text-uppercase pointer font-weight-bold" >
 
               <span onClick={(e) => this.oneColor(e)}>
-                <Link style={{ color: `${titleOne}` }} to="/desafios" >
-                  test1
+                <Link style={{ color: `${titleOne}`, textDecoration:'none' }} className="tab" to={`/${textOne}`} >
+                  {textOne}
                 </Link>
               </span>
 
             </div>
-            <div id="menu-viagem"  /*style={tabActiveTwo}*/ className="viagem col p-2 primary-gray text-uppercase pointer font-weight-bold" >
+            <div id="menu-viagem" className="viagem col p-2 primary-gray text-uppercase pointer font-weight-bold" >
 
               <span onClick={(e) => this.twoColor(e)}>
-                <Link style={{ color: `${titleTwo}` }} to="/ranking">
-                  test2
+                <Link style={{ color: `${titleTwo}`, textDecoration:'none' }} to={`/${textTwo}`}>
+                  {textTwo}
                 </Link>
               </span>
 

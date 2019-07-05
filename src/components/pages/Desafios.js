@@ -4,6 +4,9 @@ import ListaDesafios from '../pages/ListaDesafios';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import { connect } from "react-redux";
+
+//badges categorias
 const imgsViagens = [
   { badge: 'badge-entregas' },
   { badge: 'badge-volume' },
@@ -47,6 +50,7 @@ export const BadgesBomCondutor = (imgsBomCondutor) =>
 
     return <img className="badges-md" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />;
   });
+//badges categorias
 
 class Desafios extends Component {
 
@@ -54,7 +58,7 @@ class Desafios extends Component {
     showViagens: false,
     showLocais: false,
     showBomCondutor: false,
-    showDesafioProgress: true,
+    showDesafioProgress: false,
     showBadgesConquered: false
   }
 
@@ -86,11 +90,7 @@ class Desafios extends Component {
 
     let showDesafioProgress = this.state.showDesafioProgress;
 
-    let { tabDisplayVisible } = this.props;
-    let titleOne = "desafios";
-    let titleTwo = "ranking";
-
-    // IMAGES
+    //badges categorias
     this.BadgesViagens = BadgesViagens(imgsViagens);
     this.BadgesLocais = BadgesViagens(imgsLocais);
     this.BadgesBomCondutor = BadgesViagens(imgsBomCondutor);
@@ -103,9 +103,6 @@ class Desafios extends Component {
     return (
       <Router>
       <React.Fragment>
-
-        <Tabs textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}></Tabs>
-
 
         <div id="desafios" className="desafios-color">
           <div className="container">
@@ -130,7 +127,7 @@ class Desafios extends Component {
 
                 }
               </div>
-              {this.state.showViagens ? <ListaDesafios showDesafioProgress={showDesafioProgress} /> : null}
+              {this.state.showViagens ? <ListaDesafios showViagens={this.state.showViagens} showDesafioProgress={showDesafioProgress} /> : null}
 
               {/* Locais */}
               <div id="locais">
@@ -151,13 +148,14 @@ class Desafios extends Component {
 
                 }
               </div>
-              {this.state.showLocais ? <ListaDesafios showDesafioProgress={showDesafioProgress} /> : null}
+              {this.state.showLocais ? <ListaDesafios showLocais={this.state.showLocais} showDesafioProgress={showDesafioProgress} /> : null}
 
               {/* Bom Condutor */}
               <div id="bom-condutor">
                 {this.state.showBomCondutor ?
 
                   <h5 className="bomCondutor-color mt-3 font-weight-bold" onClick={this.showListBomCondutor}>Bom Condutor</h5>
+
                   :
                   <div id="bom-condutor-badges" className="row align-items-center rounded bomCondutor-desafios pt-3 pb-3 pl-4" onClick={this.showListBomCondutor}>
                     <div className="col-4 mt-3 font-weight-bold"><h5>Bom Condutor</h5></div>
@@ -172,7 +170,7 @@ class Desafios extends Component {
 
                 }
               </div>
-              {this.state.showBomCondutor ? <ListaDesafios showDesafioProgress={showDesafioProgress} /> : null}
+              {this.state.showBomCondutor ? <ListaDesafios showBomCondutor={this.state.showBomCondutor} showDesafioProgress={showDesafioProgress} /> : null}
 
             </div>
 
@@ -219,4 +217,5 @@ class Desafios extends Component {
 //   backgroundColor: '#236a36'
 // }
 
-export default Desafios
+const DesafiosExp = connect(null, null)(Desafios);
+export default DesafiosExp

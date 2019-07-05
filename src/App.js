@@ -1,4 +1,4 @@
-//TODO true/false para a Tabs
+//TODO Active selectors 
 
 import React, { Component } from 'react';
 import './App.css';
@@ -42,7 +42,46 @@ class App extends Component {
   state = {
     title: "",
     showGam: false,
-    showDesafioAtivos: false
+    showDesafioAtivos: false,
+    showTabsGam: false,
+    showTabsAtividade:false
+  }
+
+  hideTabs = () => {
+  
+    this.setState({
+      showTabsGam: false,
+      showTabsAtividade: false
+    })
+
+  }
+
+  showTabsGam = () => {
+    let showTabsGam = this.state.showTabsGam;
+
+    this.setState({
+      showTabsGam: !showTabsGam,
+      showTabsAtividade: false
+    })
+
+    titleOne = "desafios";
+    titleTwo = "ranking";
+
+  }
+
+  showTabsAtividade = () => {
+    let showTabsAtividade = this.state.showTabsAtividade;
+
+    this.setState({
+      showTabsAtividade: !showTabsAtividade,
+      showTabsGam: false
+    })
+
+    titleOne = "pedidos";
+    titleTwo = "viagens";
+
+    console.log('click-atividade')
+
   }
 
   notActiveHeader = (e) => {
@@ -62,7 +101,9 @@ class App extends Component {
   }
 
   render() {
-    let { title, showGam, showDesafioAtivos } = this.state;
+    let { title, showGam, showDesafioAtivos, showTabsGam, showTabsAtividade } = this.state;
+
+    console.log(elementID);
 
     const home = (
       showGam ?
@@ -82,7 +123,7 @@ class App extends Component {
               <div className="col-4">
                 <div style={{ width: '75px' }} className="white-back rounded-circle shadow d-flex flex-column padding-circle align-items-center justify-content-center blue-md font-weight-bold">
                   <label className="subtitle-1 mb-0">nível</label>
-                  <h5 id="nivel" className="mb-0 font-weight-bold">3</h5>
+                  <h5 id="num-nivel" className="mb-0 font-weight-bold">3</h5>
                 </div>
               </div>
             </div>
@@ -124,13 +165,17 @@ class App extends Component {
 
                 <div className="container p-0">
                   <div className="white-background rounded-background-bottom">
-                    <div className="d-flex flex-column align-items-center justify-content-center">
+                    <div className="d-flex flex-column align-items-center justify-content-center mb-5">
 
                       <div className="align-self-start pl-4 pt-3">
                         <label className="subtitle-2 text-uppercase blue-md-2">outros desafios</label>
-                        </div>
+                      </div>
 
                       <PreviewDesafios />
+
+                      <div className="align-self-end mr-3 mb-5">
+                        <Link to="/desafios"><label className="gray-text subtitle-2 text-uppercase">ver tudo</label></Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -145,9 +190,27 @@ class App extends Component {
       <div id="App" className="d-flex flex-column">
         <Router>
           <React.Fragment>
-            <Header ref={this.Header} title={title} click={this.notActiveFooter} />
+            <Header hideTabs={this.hideTabs} showTabs={this.showTabsGam} ref={this.Header} title={title} click={this.notActiveFooter} />
 
             <Tabs tabDisplay={tabDisplay}/>
+
+            {showTabsGam ?
+
+            <Tabs textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}/>
+            :
+
+            <Tabs tabDisplay={tabDisplay}/>
+
+            }
+
+            {showTabsAtividade ?
+
+            <Tabs textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}/>
+            :
+
+            <Tabs tabDisplay={tabDisplay}/>
+
+            }
 
             <Route exact path="/" render={props => (
               <React.Fragment>
@@ -163,7 +226,7 @@ class App extends Component {
             <Route path="/ranking" component={() => <Ranking />} />
 
 
-            <Footer ref={this.Footer} click={this.notActiveHeader} />
+            <Footer showTabs={this.showTabsAtividade} ref={this.Footer} click={this.notActiveHeader} />
 
           </React.Fragment>
         </Router>
@@ -177,8 +240,13 @@ const tabDisplay = {
   display: 'none'
 }
 
-// const tabDisplayVisible = {
-//   visibility: 'visible'
-// }
+const tabDisplayVisible = {
+  visibility: 'visible'
+}
+
+//Title Tabs
+let titleOne = "";
+let titleTwo = "";
+
 
 export default App;

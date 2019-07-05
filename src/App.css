@@ -431,6 +431,10 @@ Colors - background
   color: #9a9b9c;
 }
 
+.gray-text:active{
+  color: #2734DF;
+}
+
 .gray-2-text {
   color: #a9aaab;
 }
@@ -519,6 +523,10 @@ border-radius: 100%
 
 /* Home - Gam Activity */
 
+.tab{
+  color:"#1220DC";
+}
+
 .padding-circle {
   padding: 0.75rem;
 }
@@ -575,14 +583,23 @@ border-radius: 100%
     color: 	rgb(227, 228, 229,0.70);
   }
 
+  .white-l-2{
+    color: #FCFDFD;
+  }
+
   .gradient-blue{
-    background: linear-gradient(180deg, rgba(39,52,222,1) 0%, rgba(18,32,219,1) 50%, rgba(15,27,180,1) 89%);   }
+    background: linear-gradient(180deg, rgba(39,52,222,1) 0%, rgba(18,32,219,1) 50%, rgba(15,27,180,1) 89%);
+  }
 
   /* Background-Colors */
 
   .white-back {
       background-color: #ffffff;
-    }
+  }
+
+  .white-back-2 {
+    background-color: #FCFDFD;
+  }
 
   .blue-d-background{
     background-color: #0F1BB5;
@@ -592,3 +609,6 @@ border-radius: 100%
     background-color: #E4E5E6;
     border: 1px solid #E4E5E6;
   }
+
+  /* Active Click */
+

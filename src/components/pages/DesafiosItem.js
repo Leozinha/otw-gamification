@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 // import ProgressDesafios from '../svgComp/ProgressDesafios';
 
-export class DesafiosItem extends Component {
+import { connect } from "react-redux";
+
+class DesafiosItem extends Component {
   render() {
 
     const { 
-      showDesafioProgress
+      showDesafioProgress,
+      colorBadge
     } = this.props;
 
+    console.log(colorBadge)
     return (
       <React.Fragment>
         <div id="desafio" className="w-100">
@@ -28,7 +32,7 @@ export class DesafiosItem extends Component {
 
                 <div className="col-7 p-0 pl-2 d-flex flex-column justify-content-center align-items-center">
 
-                <span id="desafio-titulo" className="text-uppercase subtitle-2 align-self-start text-uppercase">entrega</span>
+                <span id="desafio-titulo" style={colorBadge} className="text-uppercase subtitle-2 align-self-start text-uppercase">entrega</span>
                 <span id="desafio-descricao" className="subtitle-2 font-weight-bold text-desafio">Entrega 12 encomendas num mes</span>
 
                     <div className="progress w-100 mt-2">
@@ -36,7 +40,7 @@ export class DesafiosItem extends Component {
                     </div>
 
 
-                  <span id="XP" className="pt-1 align-self-end subtitle-2 font-weight-bold">25XP</span>
+                  <span id="XP" style={colorBadge} className="pt-1 align-self-end subtitle-2 font-weight-bold">25XP</span>
 
                 </div>
 
@@ -58,7 +62,7 @@ export class DesafiosItem extends Component {
 
               <div className="col-7 pl-3 pr-0 d-flex flex-column justify-content-center align-items-center">
 
-                  <span className="text-uppercase subtitle-2 align-self-start text-uppercase">entrega</span>
+                  <span style={colorBadge} className="text-uppercase subtitle-2 align-self-start text-uppercase">entrega</span>
                   <span id="desafio" className="subtitle-1 font-weight-bold pt-1 text-desafio">Entrega 12 encomendas num mes</span>
 
                    
@@ -68,12 +72,11 @@ export class DesafiosItem extends Component {
 
                 <div className="col p-0 d-flex flex-column justify-content-between align-items-end subtitle-2 font-weight-bold body-1">
 
-                <span id="XP">25XP</span>
+                <span style={colorBadge} id="XP">25XP</span>
     
               </div>
               </div>
-                
-              }{/* }) */}
+           
               }
               
             </div>
@@ -85,4 +88,5 @@ export class DesafiosItem extends Component {
             
 }
 
-export default DesafiosItem
+const DesafiosItemExp = connect(null, null)(DesafiosItem);
+export default DesafiosItemExp

@@ -65,22 +65,22 @@ class Header extends Component {
   render() {
     const Trophy = this.state.trophyURL;
     const User = this.state.user;
-
-    let { title } = this.props;
+    
+    let { title, click ,showTabs,hideTabs } = this.props;
 
     return (
       <React.Fragment>
-        <div onClickCapture={this.props.click} className="navbar background align-items-center justify-content-center text-center white shadow bring-to-front">
+        <div onClickCapture={click} className="navbar background align-items-center justify-content-center text-center white shadow bring-to-front">
           <div className="container p-0">
-            <div className="col p-0">
-              <Link to="/"><img className="icons-36" src={Logo} alt="" /></Link>
+            <div onClick={(e) => this.notActive(e)} className="col p-0">
+              <Link to="/"><img className="icons-36" onClick={hideTabs} src={Logo} alt="" /></Link>
             </div>
             <div className="col-6">
               <h6 className="font-weight-normal mb-0">{title}</h6>
             </div>
             <div onClick={(e) => this.activeTrophy(e)} className="col text-right p-0">
 
-            <Link to="/ranking"><img className="icons-24"  src={Trophy} alt="" /></Link>
+            <Link to="/desafios"><img className="icons-24" onClick={showTabs} src={Trophy} alt="" /></Link>
 
             </div>
             <div onClick={(e) => this.activeProfile(e)} className="col pl-3 p-0">
