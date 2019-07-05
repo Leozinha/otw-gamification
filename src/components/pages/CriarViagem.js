@@ -176,5 +176,5 @@ class CriarViagem extends Component {
 }
 
 //TODO propTypes
-const CriarViagemExp = connect(null, mapDispatchToProps)(CriarViagem);
-export default CriarViagemExp;
+// const CriarViagemExp = connect(null, mapDispatchToProps)(CriarViagem);
+export default CriarViagem;
