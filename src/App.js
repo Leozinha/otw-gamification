@@ -219,8 +219,7 @@ class App extends Component {
             )} />
 
             <Route path="/viagem" component={CriarViagem} />
-            <Route path="/message" component={DragBadges} />
-
+  
             <Route path="/atividade" component={() => <Atividade />} />
             <Route path="/desafios" component={() => <Desafios />} />
             <Route path="/ranking" component={() => <Ranking />} />
