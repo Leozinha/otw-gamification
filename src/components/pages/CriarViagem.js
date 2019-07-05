@@ -118,7 +118,7 @@ class CriarViagem extends Component {
                   <div>
                     <DatePicker
                       className="date-time-input-size p-2 rounded"
-                      selected={this.state.horaInicio}
+                      selected={horaInicio}
                       onChange={this.handleChange3}
                       showTimeSelect
                       showTimeSelectOnly
@@ -132,7 +132,7 @@ class CriarViagem extends Component {
                   <div>
                     <DatePicker
                       className="date-time-input-size p-2 rounded"
-                      selected={this.state.horaFim}
+                      selected={horaFim}
                       onChange={this.handleChange4}
                       showTimeSelect
                       showTimeSelectOnly

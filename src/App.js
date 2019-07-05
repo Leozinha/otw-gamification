@@ -11,7 +11,6 @@ import CriarViagem from './components/pages/CriarViagem';
 import Footer from './components/layouts/Footer';
 import Atividade from './components/pages/Atividade';
 import Desafios from './components/pages/Desafios';
-import DragBadges from './components/pages/DragBadges';
 
 // Import module and default styles
 import "react-circular-progressbar/dist/styles.css";
@@ -25,11 +24,16 @@ import PreviewDesafios from './components/pages/PreviewDesafios';
 import Ranking from './components/pages/Ranking';
 import Tabs from './components/functions/Tabs';
 
+//example
 const elementID = [
   { id: 1},
   { id: 2 },
   { id: 3}
 ]
+
+//Title Tabs
+let titleOne = "";
+let titleTwo = "";
 
 class App extends Component {
 
@@ -205,7 +209,7 @@ class App extends Component {
 
             {showTabsAtividade ?
 
-            <Tabs textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}/>
+            <Tabs showTabsAtividade={showTabsAtividade} textOne={titleOne} textTwo={titleTwo} tabDisplay={tabDisplayVisible}/>
             :
 
             <Tabs tabDisplay={tabDisplay}/>
@@ -242,10 +246,5 @@ const tabDisplay = {
 const tabDisplayVisible = {
   visibility: 'visible'
 }
-
-//Title Tabs
-let titleOne = "";
-let titleTwo = "";
-
 
 export default App;

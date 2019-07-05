@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import DesafiosItem from './DesafiosItem';
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 
 const yellowBadge = {
@@ -55,5 +55,5 @@ class ListaDesafios extends Component {
   }
 }
 
-const ListaDesafiosExp = connect(null, null)(ListaDesafios);
-export default ListaDesafiosExp
+// const ListaDesafiosExp = connect(null, null)(ListaDesafios);
+export default ListaDesafios

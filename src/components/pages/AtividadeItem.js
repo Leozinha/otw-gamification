@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 class AtividadeItem extends Component {
   render() {
@@ -69,5 +69,5 @@ const heightContainer = {
   height:'110px'
 }
 
-const AtividadeItemExp = connect(null, null)(AtividadeItem);
-export default AtividadeItemExp
+// const AtividadeItemExp = connect(null, null)(AtividadeItem);
+export default AtividadeItem

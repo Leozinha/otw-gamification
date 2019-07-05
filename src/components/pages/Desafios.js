@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import Tabs from '../functions/Tabs';
 import ListaDesafios from '../pages/ListaDesafios';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 //badges categorias
 const imgsViagens = [
@@ -217,5 +216,5 @@ class Desafios extends Component {
 //   backgroundColor: '#236a36'
 // }
 
-const DesafiosExp = connect(null, null)(Desafios);
-export default DesafiosExp
+// const DesafiosExp = connect(null, null)(Desafios);
+export default Desafios

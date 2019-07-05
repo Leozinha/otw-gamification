@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AtividadeItem from './AtividadeItem';
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 
 class ListaAtividade extends Component {
@@ -14,5 +14,5 @@ class ListaAtividade extends Component {
   }
 }
 
-const ListaAtividadeExp = connect(null, null)(ListaAtividade);
-export default ListaAtividadeExp
+// const ListaAtividadeExp = connect(null, null)(ListaAtividade);
+export default ListaAtividade

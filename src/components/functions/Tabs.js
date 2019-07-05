@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-// import { BrowserRouter as Router } from 'react-router-dom';
 
 const titleOne = "#9A9B9C";
 const titleTwo = "#9A9B9C";
@@ -13,6 +12,13 @@ export class Tabs extends Component {
     titleOne: titleOneActive,
     titleTwo: titleTwo
   }
+
+  // componentWillMount(){
+  //   this.setState({
+  //     titleOne: titleOne,
+  //     titleTwo: titleTwoActive
+  //   });
+  // }
 
   oneColor(e) {
     // e.preventDefault();

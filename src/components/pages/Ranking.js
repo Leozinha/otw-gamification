@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { css } from '@emotion/core'
 
 const borderTop = {
   borderTopLeftRadius: '12px',

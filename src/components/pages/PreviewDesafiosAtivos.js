@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import ProgressDesafios from '../svgComp/ProgressDesafios';
 
 export class DesafiosItem extends Component {
 

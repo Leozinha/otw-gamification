@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
   
 // list of items
@@ -84,5 +84,5 @@ class DragBadges extends Component {
   }
 }
 
-const DragBadgesExp = connect(null, null)(DragBadges);
-export default DragBadgesExp
+// const DragBadgesExp = connect(null, null)(DragBadges);
+export default DragBadges
