@@ -28,7 +28,6 @@ const imgsBomCondutor = [
 export const BadgesViagens = (imgsViagens) =>
   imgsViagens.map(el => {
 
-    
     const showBadgesConquered = false;
     
     return showBadgesConquered ?
