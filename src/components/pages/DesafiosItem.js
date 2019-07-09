@@ -12,7 +12,11 @@ class DesafiosItem extends Component {
       colorBadge
     } = this.props;
 
-    console.log(colorBadge)
+    console.log('DESAFIO ITEM',this.props.dataFromParent);
+
+    // const userData = this.props && this.props.dataFromParent ? this.props.dataFromParent : 'null';
+    // console.log('DesafioItem', userData);
+
     return (
       <React.Fragment>
         <div id="desafio" className="w-100">
