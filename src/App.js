@@ -126,7 +126,7 @@ class App extends Component {
             </div>
           </div>
           <div className="container p-0">
-            <div className="gradient-blue rounded-background" style={{ height: '431px' }}>
+            <div className="blue-gradient rounded-background" style={{ height: '431px' }}>
 
               <div className="d-flex flex-column align-items-center justify-content-center">
                 <Radial />

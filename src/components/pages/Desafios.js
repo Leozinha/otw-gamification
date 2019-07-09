@@ -35,7 +35,6 @@ export const BadgesViagens = (imgsViagens) =>
       :
       <img className="badges-md unavailable" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />
 
-
   });
 
 export const BadgesLocais = (imgsLocais) =>

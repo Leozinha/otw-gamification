@@ -67,6 +67,7 @@ h6 {
   font-weight: 600;
   letter-spacing: 0.15px;
   line-height: 24px;
+  margin: 0;
 }
 
 .subtitle-1 {
@@ -114,6 +115,11 @@ h6 {
 
 label{
   margin: 0;
+  color: #A9AAAB;
+}
+
+.labelViagem{
+  margin-bottom: .5rem;
 }
 
 /* layout - styling */
@@ -207,6 +213,14 @@ input {
 option {
   font-size: 0.9rem;
   color: #1220dc;
+}
+
+.mr-5rem {
+  margin-right: 5.75rem;
+}
+
+.pl-6rem {
+  padding-left: 6rem;
 }
 
 /* .custom-select option:checked{
@@ -543,6 +557,10 @@ border-radius: 100%
 
   /* Colors */
 
+  .gray-dd{
+    color: #7A7B81;
+  }
+
   .gray-d{
     color: #999A9B;
   }
@@ -587,8 +605,8 @@ border-radius: 100%
     color: #FCFDFD;
   }
 
-  .gradient-blue{
-    background: linear-gradient(180deg, rgba(39,52,222,1) 0%, rgba(18,32,219,1) 50%, rgba(15,27,180,1) 89%);
+  .white {
+    color: #ffffff;
   }
 
   /* Background-Colors */
@@ -610,5 +628,20 @@ border-radius: 100%
     border: 1px solid #E4E5E6;
   }
 
-  /* Active Click */
+  /* Gradient */
 
+  .blue-gradient {
+    background: linear-gradient(180deg, rgba(39,52,222,1) 0%, rgba(18,32,219,1) 50%, rgba(15,27,180,1) 89%); 
+  }
+
+  .gray-gradient {
+    background: linear-gradient(180deg, rgba(232,233,234,1) 0%, rgba(199,199,200,1) 100%);; 
+  }
+
+  .vertical {
+    display: flex;
+    width: 20%;
+    height: 40px;
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+  }
