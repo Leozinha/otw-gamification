@@ -102,7 +102,7 @@ class PreviewDesafios extends Component {
           return num <= 3 && badges.score === 0 ?
 
             <div id="desafio" className="w-100" key={badges.id}>
-              <div id="background" style={{border: '1px solid '}} className="white rounded desafios-border p-3 mr-3 ml-3 mt-2 mb-2">
+              <div id="background" style={{border: `1px solid ${colorBadge}`}} className="white rounded desafios-border p-3 mr-3 ml-3 mt-2 mb-2">
                 <div className="container">
     
                   <div className="row align-items-center">
