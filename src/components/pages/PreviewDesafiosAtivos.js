@@ -31,29 +31,20 @@ class DesafiosItem extends Component {
 
     this.state.badgeLevels = []
     {userBadges.map( badge => {
-      // if(badge.state == false && badge.badgeInfo.name == "Entrega" && (badge.badgeInfo.level == 1 || badge.badgeInfo.level == 2 ||badge.badgeInfo.level == 3)){  
-      //   this.state.badgeLevels.push(badge);
-      // }
-      // else if(badge.state == false && badge.badgeInfo.name == "Volume" && badge.badgeInfo.level == 1){
-      //   this.state.badgeLevels.push(badge);
-      // } 
-      // else if(badge.state == false && badge.badgeInfo.name == "Distância" && badge.badgeInfo.level == 1){
-      //   this.state.badgeLevels.push(badge);
-      // }
 
-      if(badge.badgeInfo.level == 1 && badge.state == false){
+      if(badge.badgeInfo.level == 1 && badge.state == false && badge.score > 0){
         this.state.badgeLevels.push(badge);
       }
     })}
 
     {userBadges.map( badge => {
-      if(badge.badgeInfo.level == 2 && badge.state == false){
+      if(badge.badgeInfo.level == 2 && badge.state == false && badge.score > 0){
         this.state.badgeLevels.push(badge);
       }
     })}
 
     {userBadges.map( badge => {
-      if(badge.badgeInfo.level == 3 && badge.state == false){
+      if(badge.badgeInfo.level == 3 && badge.state == false && badge.score > 0){
         this.state.badgeLevels.push(badge);
       }
     })}
