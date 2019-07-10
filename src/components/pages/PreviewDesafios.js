@@ -1,20 +1,29 @@
 import React, { Component } from 'react'
 
 // export 
+
+
+
 class PreviewDesafios extends Component {
-  constructor(props) {
-    super(props);
-    
-  }
   
   render() {
-    
-    // console.log('PreviewDesaf', this.props.dataFromParent);
+
     const userBadges = this.props && this.props.dataFromParent ? this.props.dataFromParent : 'null';
-    console.log('PreviewDesafios', userBadges);
+    // let BadgesLength = userBadges.length;
+
+    // let random = Math.floor((Math.random() * userBadges.length) + 1)
+
+    let num = 0
+
+    // console.log(random)
     return (
       <React.Fragment>
-        {userBadges.slice(0, 3).map((badges) => (
+        {userBadges.map((badges) => {
+
+          num++
+
+          return num <= 3 && badges.score === 0 ?
+
             <div id="desafio" className="w-100" key={badges.id}>
               <div id="background" className="white rounded desafios-border p-3 mr-3 ml-3 mt-2 mb-2">
                 <div className="container">
@@ -45,7 +54,11 @@ class PreviewDesafios extends Component {
                 </div>
               </div>
           </div>
-          ))}
+          :
+          null
+
+          
+        })}
         
         
         {/* <div id="desafio" className="w-100">

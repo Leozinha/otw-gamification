@@ -10,12 +10,6 @@ import "react-circular-progressbar/dist/styles.css";
 
 class Radial extends Component {
 
-  constructor(props) {
-    super(props);
-    
-  }
-
-
   render() {
     // console.log('DATAFROMPARENT', this);
     const value = this.props.dataFromParent.currentLvlXPPerc;

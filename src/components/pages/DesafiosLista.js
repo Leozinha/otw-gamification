@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import DesafiosItem from './DesafiosItem';
 
-// import { connect } from "react-redux";
-
-
 const yellowBadge = {
   color:"#f6c14c"
 }
@@ -16,95 +13,62 @@ const greenBadge = {
   color:"#236a36"
 }
 
-// const UserData = {
-//   DesafiosLista: this.props.dataFromParentDesafios
-// }
-
-
-// export const BadgesViagens = (imgsViagens) =>
-//   imgsViagens.map(el => {
-
-//     const showBadgesConquered = false;
-    
-//     return showBadgesConquered ?
-//       <img className="badges-md" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />
-//       :
-//       <img className="badges-md unavailable" key={el.badge} src={require(`../../imgs/pages/${el.badge.toLowerCase()}.png`)} alt="" />
-
-
-//   });
-
 class DesafiosLista extends Component {
   
-  constructor(props) {
-    super(props);
-    
-  }
-
-  DesafiosViagens = () => {
+  Desafios = (numInicial,numFinal,colorBadge) => {
     const userData = this.props.dataFromParentDesafios
+    const showDesafioProgress = this.props.showDesafioProgress
 
-    return userData.slice(0, 9).map((badge) => (
-      <DesafiosItem key={badge.id} dataFromParent={badge} />
-    ))
-  }
+    console.log('COLOR BADGE', colorBadge)
 
-  DesafiosLocais = () => {
-    const userData = this.props.dataFromParentDesafios
-
-    return userData.slice(9, 15).map((badge) => (
-      <DesafiosItem key={badge.id} dataFromParent={badge} />
-    ))
-  }
-
-  DesafiosBomCondutor = () => {
-    const userData = this.props.dataFromParentDesafios
-
-    return userData.slice(0, 9).map((badge) => (
-      <DesafiosItem key={badge.id} dataFromParent={badge} />
+    return userData.slice(numInicial, numFinal).map((badge) => (
+      
+      <DesafiosItem key={badge.id} desafio={badge} showDesafioProgress={showDesafioProgress} colorBadge={colorBadge} />
     ))
   }
 
   render() {
 
-
     const { 
-      showDesafioProgress, 
       showViagens,
       showLocais,
       showBomCondutor
      } = this.props;
 
-     console.log(showViagens);
-
-     const userData = this.props && this.props.dataFromParentDesafios ? this.props.dataFromParentDesafios : 'null';
-    //  console.log('DesafiosLista', userData);
-
+    
     return (
       <React.Fragment>
-        {
-          showViagens ?
-          this.DesafiosViagens()
-          :
-          null
+    
+      {
+
+        showViagens ?
+
+        this.Desafios(0,9,yellowBadge)
+
+        :
+        null
         }
 
         {
-          showLocais ?
-            // <DesafiosItem /*key={badge.id}*/ colorBadge={blueBadge} showDesafioProgress={showDesafioProgress} /*dataFromParent={badge*/ />
-            this.DesafiosLocais()
-          :
-          null
+
+        showLocais ?
+
+        this.Desafios(9,16,blueBadge)
+
+        :
+        null
         }
 
         {
-          showBomCondutor ?
-          // userData.slice(16, 29).map((badge) => (
-            <DesafiosItem /*key={badge.id}*/ colorBadge={greenBadge} showDesafioProgress={showDesafioProgress} /*dataFromParent={badge}*/ />
-          // ))
-            :
-          null
+
+        showBomCondutor ?
+
+        this.Desafios(16,29,greenBadge)
+
+        :
+        null
         }
+        
       </React.Fragment>
     )
   }
