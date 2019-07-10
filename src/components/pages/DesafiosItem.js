@@ -11,7 +11,7 @@ class DesafiosItem extends Component {
 
     // console.log('DESAFIO', desafio.badgeInfo)
 
-    let percentage = desafio.badgeInfo.percentage;
+    let percentage = desafio.percentage;
 
     let Progress = showDesafioProgress
 
@@ -40,7 +40,7 @@ class DesafiosItem extends Component {
 
                   {/* PROGRESSO DO DESAFIO */}
                   <div className="progress w-100 mt-2">
-                    <div className="progress-bar" role="progressbar" style={{ width: `${desafio.percentage}%` }} aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div className="progress-bar" role="progressbar" style={{ width: `${percentage}%` }} aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
 
 

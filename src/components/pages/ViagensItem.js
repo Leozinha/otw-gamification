@@ -38,18 +38,18 @@ class ViagensItem extends Component {
                 <div className="d-flex flex-row mt-2">
                   <div className="date-icon">
                   </div>
-                  <span id="date" className="subtitle-2 gray-dd">{/*el.data*/}15/07/2019</span>
+                  <span id="date" className="subtitle-2 gray-dd">{/*el.data*/}{this.props.userData.data}</span>
                 </div>
                 <div className="d-flex flex-row">
                   <div className="time-icon">
                   </div>
-                  <span id="time" className="subtitle-2 gray-dd">18:00{/*el.horaInicio*/}-19:00{/*el.horaFim*/}</span>
+                  <span id="time" className="subtitle-2 gray-dd">{this.props.userData.horaInicio}{/*el.horaInicio*/}-{this.props.userData.horaFim}{/*el.horaFim*/}</span>
                 </div>
               </div>
 
               <div style={heightContainer} className="pt-1 pb-1 d-flex flex-column justify-content-between align-items-end">
-                <span className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.origem*/}Aveiro</span>
-                <span className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.destino*/}Porto</span>
+                <span className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.origem*/}{this.props.userData.origem}</span>
+                <span className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.destino*/}{this.props.userData.destino}</span>
               </div>
 
              {/* ESTADO DE ENTREGA */}
@@ -59,7 +59,7 @@ class ViagensItem extends Component {
              </div>
               
               <div className="d-flex justify-content-center align-items-center">
-                <span className="font-weight-bold primary-text subtitle-1"> {/*el.preco*/}€</span>
+                <span className="font-weight-bold primary-text subtitle-1"> {/*el.preco*/}{this.props.userData.preco}€</span>
               </div>
 
             </div>

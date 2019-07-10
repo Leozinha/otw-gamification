@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import underscore from 'underscore'
 
 // export 
 
@@ -6,6 +7,9 @@ import React, { Component } from 'react'
 
 class PreviewDesafios extends Component {
   
+  state = {
+    badgeLevels : []
+  }
 
   componentDidMount(){
 
@@ -51,10 +55,14 @@ class PreviewDesafios extends Component {
     // let random = Math.floor((Math.random() * userBadges.length) + 1)
 
     let num = 0
+   
  
     // console.log(random)
     return (
       <React.Fragment>
+        
+        
+        
         {userBadges.map((badges) => {//usar filter (sortof)
         
           let name = badges.badgeInfo.name;
@@ -95,14 +103,15 @@ class PreviewDesafios extends Component {
               colorBadge = '#A9AAAB'
           }
       
-          console.log(colorBadge)
+          // console.log(badges.id)
           
           num++
+          
 
-          return num <= 3 && badges.score === 0 ?
+          return num<=3  ?(
 
             <div id="desafio" className="w-100" key={badges.id}>
-              <div id="background" style={{border: '1px solid '}} className="white rounded desafios-border p-3 mr-3 ml-3 mt-2 mb-2">
+              <div id="background" style={{border: `1px solid ${colorBadge}`}} className="white rounded desafios-border p-3 mr-3 ml-3 mt-2 mb-2">
                 <div className="container">
     
                   <div className="row align-items-center">
@@ -131,10 +140,10 @@ class PreviewDesafios extends Component {
                 </div>
               </div>
           </div>
+          
+          )
           :
           null
-
-          
         })}
         
         
