@@ -5,7 +5,8 @@ class DesafiosItem extends Component {
 
  
   state = {
-    showDesafioAtivos: this.props.showDesafioAtivos
+    showDesafioAtivos: this.props.showDesafioAtivos,
+    badgeLevels : []
   }
 
 
@@ -26,9 +27,39 @@ class DesafiosItem extends Component {
     } = this.state;
 
     const userBadges = this.props && this.props.dataFromParent ? this.props.dataFromParent : 'null';
-    console.log('PreviewDesafiosAtv', userBadges.badgeInfo);
+    console.log('PreviewDesafiosAtv', userBadges);
 
+    this.state.badgeLevels = []
+    {userBadges.map( badge => {
+      // if(badge.state == false && badge.badgeInfo.name == "Entrega" && (badge.badgeInfo.level == 1 || badge.badgeInfo.level == 2 ||badge.badgeInfo.level == 3)){  
+      //   this.state.badgeLevels.push(badge);
+      // }
+      // else if(badge.state == false && badge.badgeInfo.name == "Volume" && badge.badgeInfo.level == 1){
+      //   this.state.badgeLevels.push(badge);
+      // } 
+      // else if(badge.state == false && badge.badgeInfo.name == "Distância" && badge.badgeInfo.level == 1){
+      //   this.state.badgeLevels.push(badge);
+      // }
 
+      if(badge.badgeInfo.level == 1 && badge.state == false){
+        this.state.badgeLevels.push(badge);
+      }
+    })}
+
+    {userBadges.map( badge => {
+      if(badge.badgeInfo.level == 2 && badge.state == false){
+        this.state.badgeLevels.push(badge);
+      }
+    })}
+
+    {userBadges.map( badge => {
+      if(badge.badgeInfo.level == 3 && badge.state == false){
+        this.state.badgeLevels.push(badge);
+      }
+    })}
+
+    console.log('BADGESFALSE', this.state.badgeLevels)
+    const badgeLevels = this.state.badgeLevels;
     return (
       <React.Fragment>
         
@@ -40,7 +71,7 @@ class DesafiosItem extends Component {
           <div id="background" className="white rounded" style={{ backgroundColor:'transparent' }}>
             <div className="container">
 
-            {userBadges.slice(0, 1).map((badges) => (
+            {badgeLevels.slice(0, 1).map((badges) => (
               <div  key={badges.id} className="row align-items-center p-2 mt-3">
 
                 <div className="col-3 p-0 previewComponent-md text-center">
@@ -52,7 +83,7 @@ class DesafiosItem extends Component {
                 <span id="desafio-titulo" className="text-uppercase subtitle-2 align-self-start text-uppercase font-weight-bold">{badges.badgeInfo.name}</span>
                 
                     <div className="progress w-100 mt-2" style={{backgroundColor:'#FAFAFA'}}>
-                      <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div className="progress-bar" role="progressbar" style={{width: `${badges.percentage}%`}} aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
 
 
@@ -72,7 +103,7 @@ class DesafiosItem extends Component {
   
             {
               showDesafioAtivos ?
-                  userBadges.slice(1, 4).map((badges, index) => { 
+              badgeLevels.slice(0, 3).map((badges, index) => { 
               
                     let num = index;
               
@@ -88,7 +119,7 @@ class DesafiosItem extends Component {
                 <span id="desafio-titulo" className="text-uppercase subtitle-2 align-self-start text-uppercase font-weight-bold">{badges.badgeInfo.name}</span>
                 
                     <div className="progress w-100 mt-2" style={{backgroundColor:'#FAFAFA'}}>
-                      <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div className="progress-bar" role="progressbar" style={{width: `${badges.percentage}%`}} aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
 
 
