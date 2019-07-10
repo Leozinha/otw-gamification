@@ -102,7 +102,7 @@ class PreviewDesafios extends Component {
           return num <= 3 && badges.score === 0 ?
 
             <div id="desafio" className="w-100" key={badges.id}>
-              <div id="background" className="white rounded desafios-border p-3 mr-3 ml-3 mt-2 mb-2">
+              <div id="background" style={{border: '1px solid '}} className="white rounded desafios-border p-3 mr-3 ml-3 mt-2 mb-2">
                 <div className="container">
     
                   <div className="row align-items-center">
@@ -113,7 +113,7 @@ class PreviewDesafios extends Component {
     
                   <div className="col-7 pl-3 pr-0 d-flex flex-column justify-content-center align-items-center">
     
-                      <span className="text-uppercase subtitle-2 align-self-start text-uppercase">{badges.badgeInfo.name}</span>
+                      <span style={{color: `${colorBadge}`}} className="text-uppercase subtitle-2 align-self-start text-uppercase">{badges.badgeInfo.name}</span>
                       <span id="desafio" className="subtitle-1 font-weight-bold pt-1 text-desafio">{badges.badgeInfo.description}</span>
     
                       
@@ -123,7 +123,7 @@ class PreviewDesafios extends Component {
     
                     <div className="col p-0 d-flex flex-column justify-content-between align-items-end subtitle-2 font-weight-bold body-1">
     
-                    <span id="XP">25XP</span>
+                    <span id="XP" style={{color: `${colorBadge}`}}>25XP</span>
         
                   </div>
                   </div>
