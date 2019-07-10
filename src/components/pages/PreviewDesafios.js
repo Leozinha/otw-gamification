@@ -6,6 +6,43 @@ import React, { Component } from 'react'
 
 class PreviewDesafios extends Component {
   
+
+  componentDidMount(){
+
+    // const badges = this.props.dataFromParent
+   
+    // // const name = badges.badgeInfo.name
+
+    // console.log(badges.badgeInfo.name)
+
+    // switch(name) {
+    //   case 'Entrega':
+    //     return '#f6c14c'
+    //   case 'Volume':
+    //     return '#f6c14c'
+    //   case 'Distância':
+    //     return '#f6c14c'
+    //   case 'Explorador':
+    //     return '#2734df'
+    //   case 'Viciado':
+    //     return '#2734df'
+    //   case 'Exemplar':
+    //     return '#236a36'
+    //   case 'Leal':
+    //     return '#236a36'
+    //   case 'Avaliação':
+    //     return '#236a36'
+    //   case 'Pontualidade':
+    //     return '#236a36'
+    //   case 'Disponibilidade':
+    //     return '#236a36'
+    //   default:
+    //     return '#A9AAAB'
+    // }
+
+  
+  }
+
   render() {
 
     const userBadges = this.props && this.props.dataFromParent ? this.props.dataFromParent : 'null';
@@ -14,12 +51,52 @@ class PreviewDesafios extends Component {
     // let random = Math.floor((Math.random() * userBadges.length) + 1)
 
     let num = 0
-
+ 
     // console.log(random)
     return (
       <React.Fragment>
-        {userBadges.map((badges) => {
+        {userBadges.map((badges) => {//usar filter (sortof)
+        
+          let name = badges.badgeInfo.name;
+          let colorBadge = ""
 
+          switch(name) {
+            case 'Entrega':
+              colorBadge = '#f6c14c'
+              break
+            case 'Volume':
+              colorBadge = '#f6c14c'
+              break
+            case 'Distância':
+              colorBadge = '#f6c14c'
+              break
+            case 'Explorador':
+              colorBadge = '#2734df'
+              break
+            case 'Viciado':
+              colorBadge = '#2734df'
+              break
+            case 'Exemplar':
+              colorBadge = '#236a36'
+              break
+            case 'Leal':
+              colorBadge = '#236a36'
+              break
+            case 'Avaliação':
+              colorBadge = '#236a36'
+              break
+            case 'Pontualidade':
+              colorBadge = '#236a36'
+              break
+            case 'Disponibilidade':
+              colorBadge = '#236a36'
+              break
+            default:
+              colorBadge = '#A9AAAB'
+          }
+      
+          console.log(colorBadge)
+          
           num++
 
           return num <= 3 && badges.score === 0 ?
