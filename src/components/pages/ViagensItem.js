@@ -2,14 +2,10 @@ import React, { Component } from 'react'
 
 // import { connect } from "react-redux";
 
-const percentage = 50;
+// const percentage = 50;
 
 class ViagensItem extends Component {
-  constructor(props) {
-    super(props);
-    
-  }
-  
+ 
   render() {
 
     // console.log('DATAVIAGEMDETAILS', this.props);
@@ -42,16 +38,11 @@ class ViagensItem extends Component {
                 <div className="d-flex flex-row mt-2">
                   <div className="date-icon">
                   </div>
-<<<<<<< Updated upstream
                   <span id="date" className="subtitle-2 gray-dd">{/*el.data*/}15/07/2019</span>
-=======
-                  <span id="date" className="subtitle-1">{/*el.data*/}{this.props.userData.data}</span>
->>>>>>> Stashed changes
                 </div>
                 <div className="d-flex flex-row">
                   <div className="time-icon">
                   </div>
-<<<<<<< Updated upstream
                   <span id="time" className="subtitle-2 gray-dd">18:00{/*el.horaInicio*/}-19:00{/*el.horaFim*/}</span>
                 </div>
               </div>
@@ -69,23 +60,6 @@ class ViagensItem extends Component {
               
               <div className="d-flex justify-content-center align-items-center">
                 <span className="font-weight-bold primary-text subtitle-1"> {/*el.preco*/}€</span>
-=======
-                  <span id="time" className="subtitle-1">{this.props.userData.horaInicio}{/*el.horaInicio*/}-{this.props.userData.horaFim}{/*el.horaFim*/}</span>
-                </div>
-              </div>
-
-              <div style={heightContainer} className="col-4 pt-1 pb-1 d-flex flex-column justify-content-between align-items-end">
-                <h6 className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.origem*/}{this.props.userData.origem}</h6>
-                <h6 className="m-0 text-uppercase font-weight-bold primary-2-text subtitle-1">{/*el.destino*/}{this.props.userData.destino}</h6>
-              </div>
-
-              <div className="location-img">
-
-              </div>
-
-              <div className="col-1 d-flex justify-content-center align-items-center">
-                <h5 className="font-weight-bold"> {/*el.preco*/}{this.props.userData.preco}€</h5>
->>>>>>> Stashed changes
               </div>
 
             </div>

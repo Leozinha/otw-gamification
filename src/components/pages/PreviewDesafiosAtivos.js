@@ -3,13 +3,8 @@ import React, { Component } from 'react'
 // export 
 class DesafiosItem extends Component {
 
-  constructor(props) {
-    super(props);
-    
-  }
-
+ 
   state = {
-    previewDesafiosAtivos: this.props.previewDesafiosAtivos,
     showDesafioAtivos: this.props.showDesafioAtivos
   }
 
@@ -27,18 +22,13 @@ class DesafiosItem extends Component {
   render() {
 
     let { 
-      previewDesafiosAtivos,
       showDesafioAtivos
     } = this.state;
 
     const userBadges = this.props && this.props.dataFromParent ? this.props.dataFromParent : 'null';
     console.log('PreviewDesafiosAtv', userBadges.badgeInfo);
 
-    // let previewDesafiosAtivosFirst = userBadges[0];
 
-
-    
-    
     return (
       <React.Fragment>
         

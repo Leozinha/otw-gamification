@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 
-// import { connect } from "react-redux";
-
-const percentage = 50;
-
 class DesafiosItem extends Component {
   render() {
 
     const {
       showDesafioProgress,
-      colorBadge
+      colorBadge,
+      desafio
     } = this.props;
 
-    console.log('DESAFIO ITEM',this.props.dataFromParent);
+    // console.log('DESAFIO', desafio.badgeInfo)
 
-    // const userData = this.props && this.props.dataFromParent ? this.props.dataFromParent : 'null';
-    // console.log('DesafioItem', userData);
+    let percentage = desafio.badgeInfo.percentage;
+
+    let Progress = showDesafioProgress
+
+    desafio.score > 0 ? Progress = true : Progress = false
 
     return (
       <React.Fragment>
@@ -25,7 +25,7 @@ class DesafiosItem extends Component {
 
               {/* {showDesafioProgress.map(el => {
               console.log(el.showDesafioProgress) */}
-              {/*return*/} {showDesafioProgress ?
+              {/*return*/} {Progress ?
 
                 <div /*key={el.id}*/ className="row align-items-center">
 
@@ -33,12 +33,10 @@ class DesafiosItem extends Component {
                     <img className="badges-md" src={require(`../../imgs/pages/badge-entregas.png`)} alt="" />
                   </div>
 
-
-
                   <div className="col-7 p-0 pl-2 d-flex flex-column justify-content-center align-items-center">
 
-                  <span id="desafio-titulo" style={colorBadge} className="text-uppercase subtitle-2 align-self-start text-uppercase">entrega</span>
-                  <span id="desafio-descricao" className="subtitle-2 font-weight-bold text-desafio">Entrega 12 encomendas num mes</span>
+                  <span id="desafio-titulo" style={colorBadge} className="text-uppercase subtitle-2 align-self-start text-uppercase">{desafio.badgeInfo.name}</span>
+                  <span id="desafio-descricao" className="subtitle-2 font-weight-bold text-desafio">{desafio.badgeInfo.description}</span>
 
                   {/* PROGRESSO DO DESAFIO */}
                   <div className="progress w-100 mt-2">
@@ -54,7 +52,7 @@ class DesafiosItem extends Component {
 
                   {/* INCREMENTA VALOR */}
                   <span id="num-progresso" className="gray-l font-weight-bold subtitle-2">
-                  <span className="blue-d subtitle-1 font-weight-bold p-1">1</span>/12</span>
+                  <span className="blue-d subtitle-1 font-weight-bold p-1">1</span>/{desafio.badgeInfo.finalScore}</span>
 
                   </div>
 
@@ -69,8 +67,8 @@ class DesafiosItem extends Component {
 
                   <div className="col-7 pl-3 pr-0 d-flex flex-column justify-content-center align-items-center">
 
-                    <span style={colorBadge} className="text-uppercase subtitle-2 align-self-start text-uppercase">entrega</span>
-                    <span id="desafio" className="subtitle-1 font-weight-bold pt-1 text-desafio">Entrega 12 encomendas num mes</span>
+                    <span style={colorBadge} className="text-uppercase subtitle-2 align-self-start text-uppercase">{desafio.badgeInfo.name}</span>
+                    <span id="desafio" className="subtitle-1 font-weight-bold pt-1 text-desafio">{desafio.badgeInfo.description}</span>
 
 
                     {/* <span id="XP" className="subtitle-2">25XP</span> */}

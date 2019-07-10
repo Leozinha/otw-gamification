@@ -5,18 +5,11 @@ import ViagensItem from './ViagensItem';
 
 
 class ViagensLista extends Component {
-  constructor(props) {
-    super(props);
-    
-  }
-
+  
   render() {
     // console.log('DATAFROMPARENT', this);
     const userData = this.props && this.props.dataFromParent ? this.props.dataFromParent : 'null'; 
     console.log('LWO',userData);
-
-
-    
 
     return (
       //tem de estar dentro de um ciclo
