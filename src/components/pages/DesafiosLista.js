@@ -23,72 +23,81 @@ class DesafiosLista extends Component {
     const userData = this.props.dataFromParentDesafios
     const showDesafioProgress = this.props.showDesafioProgress
 
-    console.log('COLOR BADGE', colorBadge)
+    console.log('COLOR BADGE', userData)
   
     this.state.badgeLevels = []
+    let aux = 0;
     //VIAGENS
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 1 && badge.state == false && (badge.badgeInfo.name == "Entrega" || badge.badgeInfo.name == "Volume" || badge.badgeInfo.name == "Distância")){
+      if(badge.badgeInfo.level == 1 && badge.state == false && (badge.badgeInfo.name == "Entrega" || badge.badgeInfo.name == "Volume" || badge.badgeInfo.name == "Distância") && aux<3){
         this.state.badgeLevels.push(badge);
+        aux++
       }
     })}
-
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 2 && badge.state == false && (badge.badgeInfo.name == "Entrega" || badge.badgeInfo.name == "Volume" || badge.badgeInfo.name == "Distância")){
+      if(badge.badgeInfo.level == 2 && badge.state == false && (badge.badgeInfo.name == "Entrega" || badge.badgeInfo.name == "Volume" || badge.badgeInfo.name == "Distância") && aux<3){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
-
+    
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 3 && badge.state == false && (badge.badgeInfo.name == "Entrega" || badge.badgeInfo.name == "Volume" || badge.badgeInfo.name == "Distância")){
+      if(badge.badgeInfo.level == 3 && (badge.state == false || badge.state == true) && (badge.badgeInfo.name == "Entrega" || badge.badgeInfo.name == "Volume" || badge.badgeInfo.name == "Distância") && aux<3){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
-
+    aux = 0;
     //LOCAIS
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 1 && badge.state == false && (badge.badgeInfo.name == "Explorador" || badge.badgeInfo.name == "Viciado")){
+      if(badge.badgeInfo.level == 1 && badge.state == false && (badge.badgeInfo.name == "Explorador" || badge.badgeInfo.name == "Viciado") && aux < 2){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
 
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 2 && badge.state == false && (badge.badgeInfo.name == "Explorador" || badge.badgeInfo.name == "Viciado")){
+      if(badge.badgeInfo.level == 2 && badge.state == false && (badge.badgeInfo.name == "Explorador" || badge.badgeInfo.name == "Viciado") && aux < 2){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
 
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 3 && badge.state == false && (badge.badgeInfo.name == "Explorador" || badge.badgeInfo.name == "Viciado")){
+      if(badge.badgeInfo.level == 3 && (badge.state == false || badge.state == true) && (badge.badgeInfo.name == "Explorador" || badge.badgeInfo.name == "Viciado") && aux < 2){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
-
+    aux = 0;
     //BOM CONDUTOR
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 1 && badge.state == false && (badge.badgeInfo.name == "Exemplar" || badge.badgeInfo.name == "Leal" || badge.badgeInfo.name == "Avaliação" || badge.badgeInfo.name == "Pontualidade" || badge.badgeInfo.name == "Disponibilidade")){
+      if(badge.badgeInfo.level == 1 && badge.state == false && (badge.badgeInfo.name == "Exemplar" || badge.badgeInfo.name == "Leal" || badge.badgeInfo.name == "Avaliação" || badge.badgeInfo.name == "Pontualidade" || badge.badgeInfo.name == "Disponibilidade") && aux < 5){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
 
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 2 && badge.state == false && (badge.badgeInfo.name == "Exemplar" || badge.badgeInfo.name == "Leal" || badge.badgeInfo.name == "Avaliação" || badge.badgeInfo.name == "Pontualidade" || badge.badgeInfo.name == "Disponibilidade")){
+      if(badge.badgeInfo.level == 2 && badge.state == false && (badge.badgeInfo.name == "Exemplar" || badge.badgeInfo.name == "Leal" || badge.badgeInfo.name == "Avaliação" || badge.badgeInfo.name == "Pontualidade" || badge.badgeInfo.name == "Disponibilidade") && aux < 5){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
 
     {userData.map( badge => {
 
-      if(badge.badgeInfo.level == 3 && badge.state == false && (badge.badgeInfo.name == "Exemplar" || badge.badgeInfo.name == "Leal" || badge.badgeInfo.name == "Avaliação" || badge.badgeInfo.name == "Pontualidade" || badge.badgeInfo.name == "Disponibilidade")){
+      if(badge.badgeInfo.level == 3 && (badge.state == false || badge.state == true) && (badge.badgeInfo.name == "Exemplar" || badge.badgeInfo.name == "Leal" || badge.badgeInfo.name == "Avaliação" || badge.badgeInfo.name == "Pontualidade" || badge.badgeInfo.name == "Disponibilidade") && aux < 5){
         this.state.badgeLevels.push(badge);
+        aux++;
       }
     })}
     
@@ -117,7 +126,7 @@ class DesafiosLista extends Component {
 
         showViagens ?
 
-        this.Desafios(0,9,yellowBadge)
+        this.Desafios(0,3,yellowBadge)
 
         :
         null
@@ -127,7 +136,7 @@ class DesafiosLista extends Component {
 
         showLocais ?
 
-        this.Desafios(9,15,blueBadge)
+        this.Desafios(3,5,blueBadge)
 
         :
         null
@@ -137,7 +146,7 @@ class DesafiosLista extends Component {
 
         showBomCondutor ?
 
-        this.Desafios(15,30,greenBadge)
+        this.Desafios(5,10,greenBadge)
 
         :
         null
