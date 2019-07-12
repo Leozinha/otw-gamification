@@ -53,7 +53,7 @@ class App extends Component {
   componentDidMount(){
     var that = this;
     var config = {
-      headers: {'Authorization': "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRkMzIyYTY3YTZmMGNmMjE0MGY3NmRkNzRjYTNjY2EyNDI5NDY3MDBiYTRjMTFkNWNkNmM3NDU0ZjdkMTg1ZDc3Nzk2NmIyMGM1MDQzN2EwIn0.eyJhdWQiOiIxIiwianRpIjoiNGQzMjJhNjdhNmYwY2YyMTQwZjc2ZGQ3NGNhM2NjYTI0Mjk0NjcwMGJhNGMxMWQ1Y2Q2Yzc0NTRmN2QxODVkNzc3OTY2YjIwYzUwNDM3YTAiLCJpYXQiOjE1NjIyNzY0MDAsIm5iZiI6MTU2MjI3NjQwMCwiZXhwIjoxNTkzODk4ODAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.lO4htPabPKP_jbhfEObBqvhgWpRm7RJVLMnRiI25VGPRT3T7-kOjV8BTnNNhBwjUe_sX-k3lrdRnnwSifxlTDWUy69BUBuTJ4iZMsrC4dpII8y5cUYF08HpmNoxppx2swph4xVxUkvapWpIXsxNUzchA8sl12hA0IdnpZ4ehfR_Ix08V9OM-OHO_E6Ut6QC73jv5rXIoHu074m-RuJfy0pAkTt35d0tAf0nmeZNtGwYyQl1eGzpOMc5y3GmlxMTIXH99_TbxMH3zfWxg7vpJshUIcvmVKUkOBZV6OK2m-fnTmbfAjx-WsRdOnQC8mltAn5gDmnUhLbdwoPFtZ4hWPXhy8w4tRvd_Z1gLRPWxNMjM8DaSKJCUYvKxgY7I-_Lvavanks9fmQ-V6JrW8owbrma3iiC9pclWhYyjwx0rE8kpMGcDcp-g0_Ve01_XqAls5O5itjpdFpV1N4MHxhiktM55IY_qM2JTTJlzzmhxeiPkAFtiS_6UGqkFAgRkh6EmeUipqBRCm0MTprsAb9JGNSTJG9_tcmKTzLMSImmyC6vVFPn1S9k-xTqeNp4K9G_9RuvHXrCR9vk9whSJpv6YBXPI8V1U9VGiNk7q1ShbWW3q8NczsdqwluA8q4VPp_j33HSYk3lu111uOvf39GiWrtFSnUQT5gAdieu7dDZIrco"}
+      headers: {'Authorization': "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjQ3OWMxNjA1YzM5ZmZjYmY4OTdlNzg4OWVkZTZiMmVlNWZhMzA2YTBhYzcwYjE3NDdkMzRhMzllNDQyYzliMzEzOTU0NWFhZmVlOTc1MWIxIn0.eyJhdWQiOiIxIiwianRpIjoiNDc5YzE2MDVjMzlmZmNiZjg5N2U3ODg5ZWRlNmIyZWU1ZmEzMDZhMGFjNzBiMTc0N2QzNGEzOWU0NDJjOWIzMTM5NTQ1YWFmZWU5NzUxYjEiLCJpYXQiOjE1NjI5NDEzNjYsIm5iZiI6MTU2Mjk0MTM2NiwiZXhwIjoxNTk0NTYzNzY2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.PB0NjzePS7wnYkgE193oV_BH0mgB0PXU8hNJOQppfVZaqVcfte4Gizw5Yu0gga2v0DM6KMCX2uY7Ma2l0P-FyZsDgYCInCm7YvVx5zpqy7eSdIDCWhkzo0jiQ0xgohyOmiShoAgVUvTK69C-L3wJwq3K4LU_hyhUJ8GikppUXvubcaAoiCXtCv3TDW9d7tdkAuEyXMlq5VEG5M83iviret7-qve2UJp_hlfK1Wspqz0wsKpwXE_RIvmVUMryeqjHYGDDOAtwq7iBkhWiZ-d3_ZCAzasDN7hmriRnusk0PxfuOMjTkHAes5xsBnQ1N1xVNFO8nE9RXCzRdX9Xa9WxX2bwMfJ999SMHK-9EAYJSvQokjLSq-Fdquzu68qyIY-vb5yJcrMvEwl_7lCIsQY6_X6N9MOBDd7bjCXndkXMgIuqbvntu4WJtIH4X4VAu6tHAWNGgdNqLFfktQHFvHV45PuVGyD8-Spw9lKTbj7XfnR_nnvcWFG30N_IMsX7j6nvcKfpVGx__4w0gEjYJEc8ppv1boa43jlW6E4baTpcbK8KD3BuACadQtJQTTGlzMArx7z8eqM_FKNYAalOx-Hu5NkzZX_hpBkDDoZymPb2YjCoZj9frorFrcaKew6zWD0KNvSvuV5LolfbPdVj2AxtlnMGnEmiL-CNnNUP0eFzD0o"}
     };
 
     axios.all([axios.get('http://localhost:8000/api/user', config), axios.get('http://localhost:8000/api/user/leaderboardPoints', config)])
@@ -145,7 +145,13 @@ class App extends Component {
 
   render() {
     let { title, showDesafioAtivos, showTabsGam, showTabsAtividade, userData } = this.state;
-   
+    // console.log('HERE',userData);
+    let teste = [].concat(userData.badges)
+                  .sort((a, b) => a.updated_at < b.updated_at)
+                  .map((item, i) => item);
+    // let ultimoDesafio = teste[0].badge;
+    // console.log('ultimodesafio', ultimoDesafio);
+    // console.log('TESTE',teste[0]);
     // const userData = this.state.userData;
     const userLeaderboard = this.state.userLeaderboard && this.state.userLeaderboard.user ? this.state.userLeaderboard.user : 'nao esta no leaderboard';
     const home = (
@@ -200,7 +206,7 @@ class App extends Component {
                   </div>
                 </div>
 
-                <div className="container p-0">
+                {/* <div className="container p-0">
                   <div className="white-background rounded-background-bottom">
                     <div className="d-flex flex-column align-items-center justify-content-center mb-5">
 
@@ -215,7 +221,7 @@ class App extends Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
               </div>
             </div>
