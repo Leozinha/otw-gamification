@@ -1,33 +1,647 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+svg path {
+  fill: none;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  font-family: "Lato", sans-serif;
+  color: #555;
+  height: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+a {
+  text-decoration: none;
+}
+
+a.active{
+  background-color:#1220dc;
+  color: #1220DC; 
+}
+
+.navbar.container.viagem.active{
+  background-color:#1220dc;
+  color: #1220DC; 
+}
+
+svg path {
+    fill: none;
+    stroke-width: 20px;
+    stroke-miterlimit: round;
+}
+
+/* Font-sizes */
+
+h3 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 58px
+}
+
+h4 {
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  line-height: 41px
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 29px
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.subtitle-1 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  line-height: 22px;
+}
+
+.subtitle-2 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 17px;
+}
+
+.body-1 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+}
+
+.body-2 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  line-height: 17px;
+}
+
+.btn-size {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  line-height: 17px;
+}
+
+.caption {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4;
+  line-height: 14px;
+}
+
+label{
+  margin: 0;
+  color: #A9AAAB;
+}
+
+.labelViagem{
+  margin-bottom: .5rem;
+}
+
+/* layout - styling */
+
+#root {
+  height: inherit;
+}
+
+
+#App {
+  height: inherit;
+  background-color: #f7f7f7;
+}
+
+.background {
+  background: rgba(251, 251, 251, 1);
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  height: inherit;
+}
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-color: #1220dc;
+}
+
+.menu {
+  height: 55px;
+  position: relative;
+}
+
+.footer {
+  height: 60px;
+}
+
+/*
+* Icons
+ */
+
+.icons-18 {
+  width: 18px;
+}
+.icons-24 {
+  width: 24px;
+}
+.icons-36 {
+  width: 36px;
+}
+.icons-48 {
+  width: 48px;
+}
+
+/* Badges */
+
+.badges-md {
+  width: 78px;
+}
+
+.badges-sm {
+  width: 48px;
+}
+
+/* criar viagem */
+
+textarea,
+select,
+input {
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.date-time input {
+  font-size: 1rem;
+}
+
+.date-time-input-size {
+  width: 60px;
+}
+
+.custom-select {
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  -webkit-appearance: none;
+}
+
+.custom-select,
+option {
+  font-size: 0.9rem;
+  color: #1220dc;
+}
+
+.mr-5rem {
+  margin-right: 5.75rem;
+}
+
+.pl-6rem {
+  padding-left: 6rem;
+}
+
+/* .custom-select option:checked{
+  background-color:#1220DC;
+  color: #fff;
+} */
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 rgb(180, 173, 173);
+}
+
+.custom-select:focus {
+  border: 2px solid #1220dc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+input[type="text"]:focus {
+  border: 2px solid #1220dc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+::-webkit-input-placeholder {
+  font-size: 13px !important;
+  color: #a9aaab;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 13px !important;
+  color: #a9aaab;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 13px !important;
+  color: #a9aaab;
+}
+
+.input-disabled::-moz-placeholder,
+.input-disabled::-webkit-input-placeholder,
+.input-disabled:-moz-placeholder {
+  color: #293fc0;
+  opacity: 1;
+}
+
+.input-value-size {
+  font-size: 0.9rem;
+  color: #a9aaab;
+}
+
+input,
+select,
+textarea {
+  color: #1220dc;
+}
+
+textarea:focus,
+input:focus {
+  color: #1220dc;
+}
+
+/* button */
+
+button {
+  border: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.btn-style {
+  background: transparent;
+}
+
+.btn-style:hover {
+  color: #fcfcfc;
+}
+
+.link-no-decoration,
+.link-no-decoration:hover,
+.link-no-decoration:active,
+.link-no-decoration:focus {
+  outline: 0;
+  text-decoration: none;
+  color: inherit;
+  width: inherit;
+  height: inherit;
+}
+
+.primary-btn {
+  border-radius: 50px;
+  max-width: 100%;
+  height: 59px;
+  width: 200px;
+  max-height: 100%;
+  color: #fcfcfc;
+}
+
+.primary-btn:active {
+  border: 2px solid #fcfcfc;
+  font-weight: bold;
+}
+
+/* Atividade */
+
+.stage-no-photo {
+  width: 100%;
+  height: 84.5%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bring-to-front {
+  z-index: 1;
+}
+
+
+
+/*
+Colors - background
+ */
+
+.background-white-condutor {
+  border: 1px solid #1220dc;
+  height: 75%;
+}
+
+.background-white-review {
+  border: 1px solid #1220dc;
+  height: 80%;
+}
+
+.white {
+  background-color: #fcfcfc;
+}
+
+.white-height {
+  height: 380px;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.gray {
+  background-color: #9a9b9c;
+}
+
+.gray-2 {
+  background-color: #a9aaab;
+}
+.gray-3 {
+  background-color: #b5b6b6;
+}
+
+.primary {
+  background-color: #1220dc;
+}
+
+.primary-2 {
+  background-color: #293fc0;
+}
+
+.primary-3 {
+  background-color: #3d48e2;
+}
+
+.primary-3 {
+  background-color: #6069e7;
+}
+
+.primary-4 {
+  background-color: #7179e9;
+}
+
+.sucess {
+  background-color: #00c653;
+}
+
+.sucess-2 {
+  background-color: #45d580;
+}
+
+.pendente {
+  background-color: #ff895b;
+}
+
+.pendente-2 {
+  background-color: #ffa886;
+}
+
+.border-sucess {
+  border: 1px solid #00c653;
+}
+
+.viagens-desafios {
+  background-color: #f6c14c;
+}
+
+.locais-desafios {
+  background-color: #2734df;
+}
+
+.bomCondutor-desafios {
+  background-color: #236a36;
+}
+/* Text Color */
+
+.white-text {
+  color: #fcfcfc;
+}
+
+.white-back-text {
+  color: #f7f7f7;
+}
+
+.black-text {
+  color: #000000;
+}
+
+.gray-text {
+  color: #9a9b9c;
+}
+
+.gray-text:active{
+  color: #2734DF;
+}
+
+.gray-2-text {
+  color: #a9aaab;
+}
+.gray-3-text {
+  color: #b5b6b6;
+}
+
+.primary-text {
+  color: #1220dc;
+}
+
+.primary-2-text {
+  color: #293fc0;
+}
+
+.primary-3-text {
+  color: #3d48e2;
+}
+
+.primary-3-text {
+  color: #6069e7;
+}
+
+.primary-4-text {
+  color: #7179e9;
+}
+
+.sucess-text {
+  color: #00c653;
+}
+
+.sucess-2-text {
+  color: #45d580;
+}
+
+.pendente-text {
+  color: #ff895b;
+}
+
+.pendente-2-text {
+  color: #ffa886;
+}
+
+/* Desafios */
+
+.rounded{
+  border-radius: 0.6rem;
+}
+
+.desafios-border{
+  border: 1px solid #C7C7C8;
+}
+
+.desafios-color{
+    color: #F6F6F6;
+}
+
+.viagens-color {
+    color: #f6c14c;
+}
+
+.locais-color {
+    color: #2734df;
+}
+
+.bomCondutor-color {
+    color: #236a36;
+}
+
+.text-desafio {
+    color: #7A7B80;
+}
+
+.unavailable {
+    opacity: 0.5;
+}
+
+/* Radial Progress Bar */
+
+.percentage-background {
+background: #ffffff;
+width: 140px;
+height: 140px;
+border-radius: 100%
+}
+
+/* Home - Gam Activity */
+
+.tab{
+  color:"#1220DC";
+}
+
+.padding-circle {
+  padding: 0.75rem;
+}
+
+.rounded-background{
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.rounded-background-bottom{
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+  /* Colors */
+
+  .gray-dd{
+    color: #7A7B81;
   }
-  to {
-    transform: rotate(360deg);
+
+  .gray-d{
+    color: #999A9B;
   }
-}
+
+  .gray-md{
+    color: #B6B6BE;
+  }
+
+  .gray-md-2{
+    color: #B7B7BF;
+  }
+
+  .gray-l{
+    color: rgba(122, 123, 128,0.75);
+  }
+
+  .blue-d{
+    color: #0F1BB5;
+  }
+
+  .blue-md{
+    color: #1220DC;
+  }
+
+  .blue-md-2{
+    color: #2734DF;
+  }
+
+  .blue-l{
+    color: rgb(39, 52, 222,0.70);
+  }
+
+  .white-md{
+    color: 	#F6F6F6;
+  }
+
+  .white-l{
+    color: 	rgb(227, 228, 229,0.70);
+  }
+
+  .white-l-2{
+    color: #FCFDFD;
+  }
+
+  .white {
+    color: #ffffff;
+  }
+
+  /* Background-Colors */
+
+  .white-back {
+      background-color: #ffffff;
+  }
+
+  .white-back-2 {
+    background-color: #FCFDFD;
+  }
+
+  .blue-d-background{
+    background-color: #0F1BB5;
+  }
+
+  .gray-background{
+    background-color: #E4E5E6;
+    border: 1px solid #E4E5E6;
+  }
+
+  /* Gradient */
+
+  .blue-gradient {
+    background: linear-gradient(180deg, rgba(39,52,222,1) 0%, rgba(18,32,219,1) 50%, rgba(15,27,180,1) 89%); 
+  }
+
+  .gray-gradient {
+    background: linear-gradient(180deg, rgba(232,233,234,1) 0%, rgba(199,199,200,1) 100%);; 
+  }
+
+  .vertical {
+    display: flex;
+    width: 20%;
+    height: 40px;
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+  }
